@@ -4,7 +4,7 @@
             <div class="collapse navbar-collapse justify-content-between">
                 <div class="header-left">
                     <div class="dashboard_bar">
-                        Welcome, Simon!
+                        Welcome, {{Auth::user()->name}}!
                     </div>
                 </div>
                 
@@ -23,7 +23,7 @@
                                         <li>
                                             <div class="timeline-panel">
                                                 <div class="media me-2">
-                                                    <img alt="image" width="50" src="images/avatar/1.jpg">
+                                                    <img alt="image" width="50" src="{{asset('images/avatar/1.jpg')}}">
                                                 </div>
                                                 <div class="media-body">
                                                     <h6 class="mb-1"><a href="javascript:voiud(0)"> Dr sultads Send you Photo</a></h6>
@@ -60,10 +60,10 @@
                     </ul>
                     <a class="nav-link user-profile" href="javascript:void(0);"  role="button" data-bs-toggle="dropdown">
                         <div class="header-info2 d-flex align-items-center">
-                            <img src="images/placeholder.jpg" alt="">
+                            <img src="{{asset('images/placeholder.jpg')}}" alt="">
                             <div class="d-flex align-items-center sidebar-info">
                                 <div class="user-info">
-                                    <span class="font-w500 d-block  fs-5 text-white">Simon Gilham</span>
+                                    <span class="font-w500 d-block  fs-5 text-white">{{Auth::user()->name}}</span>
                                     <small class="text-end font-w400">Admin</small>
                                 </div>
                                 <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">

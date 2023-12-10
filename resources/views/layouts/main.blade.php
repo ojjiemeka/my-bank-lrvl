@@ -16,7 +16,7 @@
 	<meta name="format-detection" content="telephone=no">
 	
 	<!-- PAGE TITLE HERE -->
-	<title>Dolab Personal Banking Admin</title>
+	<title>Chase Investment Banking</title>
 	
 	<!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="images/favicon.png">
@@ -34,6 +34,9 @@
 	<link rel="stylesheet"
 	href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
+
+	<!-- Scripts -->
+    {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
 	
 </head>
 
@@ -95,6 +98,9 @@
 	<!-- Form Steps -->
 	<script src="{{asset('vendor/jquery-smartwizard/dist/js/jquery.smartWizard.js')}}"></script>
 	<script src="{{asset('vendor/jquery-nice-select/js/jquery.nice-select.min.js')}}"></script>
+	 <!-- Datatable -->
+	 <script src="{{asset('vendor/datatables/js/jquery.dataTables.min.js')}}"></script>
+	 <script src="{{asset('js/plugins-init/datatables.init.js')}}"></script>
 	<!-- Dashboard 1 -->
 	<script src="{{asset('js/dashboard/dashboard-1.js')}}"></script>
 	<script src="{{asset('js/custom.min.js')}}"></script>

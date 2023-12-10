@@ -25,4 +25,14 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function accounts() {
+        return view('admin.accounts.view');
+        // return "index works";
+    }
+
+    public function addAccounts() {
+        return view('admin.accounts.create');
+        // return "index works";
+    }
 }
