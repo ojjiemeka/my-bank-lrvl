@@ -3,6 +3,7 @@
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccountsController;
+use App\Http\Controllers\BalanceController;
 use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,4 @@ Route::get('/transaction-history', [App\Http\Controllers\PagesController::class,
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::resource('accounts',AccountsController::class);
+Route::resource('balances',BalanceController::class);

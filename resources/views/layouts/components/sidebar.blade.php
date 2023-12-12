@@ -37,7 +37,7 @@
                     </li>
         
         
-                    <li><a class="{{route()}}" href="javascript:void()" aria-expanded="false">
+                    <li><a class="{{route('balances.index')}}" href="javascript:void()" aria-expanded="false">
                         <div class="menu-icon">
                             <i class='bx bx-sm bxs-building-house'></i>
                         </div>	
