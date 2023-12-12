@@ -37,7 +37,7 @@
                     </li>
         
         
-                    <li><a class="{{route('balances.index')}}" href="javascript:void()" aria-expanded="false">
+                    <li><a class="" href="{{route('balances.index')}}" aria-expanded="false">
                         <div class="menu-icon">
                             <i class='bx bx-sm bxs-building-house'></i>
                         </div>	
@@ -53,6 +53,13 @@
                         </a>
                     </li>
                     
+                    <li><a class="" href="javascript:void()" aria-expanded="false">
+                        <div class="menu-icon">
+                            <i class='bx bx-sm bxs-envelope'></i>
+                        </div>	
+                            <span class="nav-text">Email</span>
+                        </a>
+                    </li>
                     
                 </ul>
                 

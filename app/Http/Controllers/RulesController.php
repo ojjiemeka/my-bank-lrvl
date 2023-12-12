@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class BalanceController extends Controller
+class RulesController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.balance.view');
+        return view('admin.restrictions.view');
     }
 
     /**
@@ -19,7 +20,7 @@ class BalanceController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
