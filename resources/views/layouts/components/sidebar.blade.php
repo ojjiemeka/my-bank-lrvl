@@ -45,7 +45,7 @@
                         </a>
                     </li>
         
-                    <li><a class="" href="javascript:void()" aria-expanded="false">
+                    <li><a class="" href="{{route('restrictions.index')}}" aria-expanded="false">
                         <div class="menu-icon">
                             <i class='bx bx-sm bxs-cog'></i>
                         </div>	

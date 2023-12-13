@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('address');
             $table->string('phonenumber');
             $table->date('dob');
+            $table->string('acc_number');
             $table->string('email')->unique();
             $table->timestamps();
         });

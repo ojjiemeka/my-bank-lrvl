@@ -42,6 +42,10 @@
                                         <label class="form-label">Address</label>
                                         <input type="text" name="address" class="form-control" placeholder="">
                                     </div>
+                                    <div class="mb-3 col-md-6">
+                                        <label class="form-label">Account Number</label>
+                                        <input type="text" name="address" class="form-control" placeholder="">
+                                    </div>
                                 </div>
                                 <div class="mb-3">
                                     <div class="form-check">

@@ -13,20 +13,23 @@ class RuleSeeder extends Seeder
      */
     public function run(): void
     {
+
         $rules = [
             [
-                'name' => '1',
+                'name' => 'Rule 1',
                 'desc' => 'All Access Restricted',
             ],
             [
-                'name' => '2',
+                'name' => 'Rule 2',
                 'desc' => 'Access to ONLY homepage',
             ],
             [
-                'name' => '3',
+                'name' => 'Rule 3',
                 'desc' => "Access to all pages but can't withdraw from account ",
             ],
             // Add more admins as needed...
         ];
+
+        DB::table('rules')->insert($rules);
     }
 }
