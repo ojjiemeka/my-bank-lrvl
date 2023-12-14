@@ -5,19 +5,25 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Rules;
 use Illuminate\Http\Request;
-
+use RealRashid\SweetAlert\Facades\Alert;
 class RestrictionController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+
+    public $message = "Data has been stored successfully!";
+
+    public function getAll(){
+       $data = Rules::all();
+       return $data;
+    }
+
     public function index()
     {
-        $data = Rules::all();
         return view('admin.restrictions.view', [
-            "rules" => $data
+            "rules" => $this->getAll()
         ]);
-        // echo $data;
     }
 
     /**
@@ -33,7 +39,30 @@ class RestrictionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validate the request data
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'desc' => 'required',
+            // Add validation rules for other fields
+        ]);
+
+        // Create a new instance of your model and fill it with the validated data
+    $model = new Rules();
+    $model->fill($validatedData);
+
+    // echo $this->message;
+    // dd($model);
+    $store = $model->save();
+
+    if(!$store){
+        Alert::error('Error', 'Something went wrong');
+
+        return redirect()->route('restrictions.index');
+    }
+
+    Alert::success('Success', 'Rule has been created!!');
+    return redirect()->route('restrictions.index');
+
     }
 
     /**
@@ -63,8 +92,26 @@ class RestrictionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request, string $id)
     {
-        //
+        // Find the resource by ID
+    $resource = Rules::find($id);
+
+    // Check if the resource exists
+    if (!$resource) {
+        Alert::error('Error', 'Something went wrong');
+
+        return redirect()->route('restrictions.index');
+    }
+
+    // // Delete the resource
+    $resource->delete();
+     // Display a success message using toastr
+    
+    Alert::success('Success', 'Rule has been deleted!!');
+    
+    return view('admin.restrictions.view', [
+        "rules" => $this->getAll()
+    ]);
     }
 }
