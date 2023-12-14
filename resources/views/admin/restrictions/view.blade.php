@@ -102,11 +102,12 @@
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal">
                                                         </button>
                                                     </div>
+                                                    <form action="{{ route('restrictions.update', $rule->id) }}" method="POST"
+                                                        enctype="multipart/form-data">
+                                                        @csrf
+                                                        @method('PUT')
                                                     <div class="modal-body">
                                                         <div class="basic-form">
-                                                            <form action="{{ route('accounts.store') }}" method="POST"
-                                                                enctype="multipart/form-data">
-                                                                @csrf
 
                                                                 <div class="row">
                                                                     <div class="mb-3 col-md-12">
@@ -121,15 +122,15 @@
                                                                             value="{{ $rule->desc }}"
                                                                             class="form-control" placeholder="">
                                                                     </div>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-danger light btn-sm"
-                                                            data-bs-dismiss="modal">Close</button>
-                                                        <button type="button" class="btn btn-primary btn-sm">Save
-                                                            changes</button>
-                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger light btn-sm"
+                                                                    data-bs-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-primary btn-sm">Save
+                                                                    changes</button>
+                                                            </div>
+                                                        </form>
                                                 </div>
                                             </div>
                                         </div>

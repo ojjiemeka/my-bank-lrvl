@@ -86,7 +86,30 @@ class RestrictionController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+    $resource = Rules::find($id);
+        // dd($resource);
+
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'desc' => 'required',
+            // Add other fields as needed
+        ]);
+
+        if (!$resource) {
+            Alert::error('Error', 'Something went wrong');
+    
+            return redirect()->route('restrictions.index');
+        }
+    
+        // // Delete the resource
+        $resource->update($validatedData);
+         // Display a success message using toastr
+        
+        Alert::success('Success', 'Rule has been updated!!');
+        
+        return view('admin.restrictions.view', [
+            "rules" => $this->getAll()
+        ]);
     }
 
     /**
