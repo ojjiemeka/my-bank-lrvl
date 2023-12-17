@@ -1,9 +1,6 @@
 @extends('layouts.main')
 
 @section('content')
-@extends('layouts.main')
-
-@section('content')
     <div class="content-body">
         <!-- row -->
         <div class="container-fluid">
@@ -12,11 +9,11 @@
                     <div class="card-header">
                         <h4 class="card-title">Add account info</h4>
                     </div>
-                    <div class="card-body">
-                        <div class="basic-form">
-                            <form action="{{ route('accounts.store') }}" method="POST" enctype="multipart/form-data">
-                                @csrf
 
+                    <form action="{{ route('accounts.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="card-body">
+                            <div class="basic-form">
                                 <div class="row">
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label">First Name</label>
@@ -28,7 +25,7 @@
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label">Email</label>
-                                        <input type="email" class="form-control" placeholder="Email">
+                                        <input type="email" name="email" class="form-control" placeholder="Email">
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label">Phone number</label>
@@ -44,25 +41,33 @@
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label">Account Number</label>
-                                        <input type="text" name="address" class="form-control" placeholder="">
+                                        <input id="result" type="text" name="acc_number" maxlength="12"
+                                            class="form-control" placeholder="">
+                                    </div>
+                                    <div class="align-items-sm-end col-md-6 d-flex mb-3">
+                                        <button type="button" class="btn btn-secondary light btn-sm"
+                                            onclick="generateRandomNumbers()">Generate Acc# </button>
                                     </div>
                                 </div>
-                                <div class="mb-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Check me out
-                                        </label>
-                                    </div>
-                                </div>
-                                <button type="submit" class="btn btn-default">Create</button>
-                            </form>
+
+                            </div>
                         </div>
-                    </div>
+                        <div class="mb-5 text-center">
+                            <button type="submit" class="btn btn-default">Create</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-@endsection
 
+    <script>
+        function generateRandomNumbers() {
+            // Generate a random 12-digit number
+            const randomNumber = Math.floor(Math.random() * 1e12).toString().padStart(12, '0');
+
+            // Display the number in the input field
+            document.getElementById('result').value = randomNumber;
+        }
+    </script>
 @endsection

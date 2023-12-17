@@ -12,12 +12,12 @@ class Balance extends Model
     protected $table = 'balance';
 
     protected $fillable = [
-        'fname',
-        'lname',
-        'address',
-        'dob',
-        'acc_number',
-        'acc_number',
-        'email',
+        'acc_id',
+        'wallet_balance',
+        'main_balance',
+        'card_1',
+        'card_2',
+        'card_3',
+        'card_4'
     ];
 }

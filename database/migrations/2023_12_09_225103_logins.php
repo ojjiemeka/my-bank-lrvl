@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('acc_id');
             $table->string('acc_userid');
+            $table->string('status');
             $table->string('password');
             $table->timestamps();
         });

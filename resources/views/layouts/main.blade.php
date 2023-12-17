@@ -47,7 +47,7 @@
 
 
     <div id="main-wrapper">
-        @include('layouts.components.circles-animation')
+        {{-- @include('layouts.components.circles-animation') --}}
 
         <!--**********************************
         Nav header start
