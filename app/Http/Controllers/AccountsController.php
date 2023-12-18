@@ -11,6 +11,12 @@ class AccountsController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+     public function __construct()
+     {
+         $this->middleware('auth');
+     }
+     
     public function getAll()
     {
         $data = Accounts::all();
@@ -51,6 +57,15 @@ class AccountsController extends Controller
 
         // dd($validatedData);
 
+        // Check if the information already exists
+    $existingRecord = Accounts::where('email', $validatedData['email'])->first();
+
+    if ($existingRecord) {
+        // Information already exists, you can handle it as per your requirements
+        Alert::error('Error', 'Account information already exists');
+        return redirect()->route('accounts.create');
+    }
+
         // Create a new instance of your model and fill it with the validated data
         $model = new Accounts();
         $model->fill($validatedData);
@@ -66,7 +81,7 @@ class AccountsController extends Controller
         }
 
         Alert::success('Success', 'Account has been created!!');
-        return redirect()->route("accounts.create");
+        return redirect()->route('balances.index');
     }
 
     /**
@@ -149,5 +164,6 @@ class AccountsController extends Controller
     return view('admin.accounts.view', [
         "data" => $this->getAll()
     ]);
+
     }
 }

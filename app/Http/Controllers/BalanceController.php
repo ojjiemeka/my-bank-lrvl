@@ -13,23 +13,38 @@ class BalanceController extends Controller
      * Display a listing of the resource.
      */
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function getAll()
     {
         $result = Accounts::join('balance', 'accounts.id', '=', 'balance.acc_id')
-        ->select('accounts.*', 'balance.*')
-        ->get();
+            ->select('accounts.*', 'balance.*')
+            ->get();
+        // dd($result);
 
-    if ($result->isEmpty()) {
-        return response()->json(['message' => 'No matching records found.']);
+        // if (count($result) === '') {
+        //     // If the result set is empty, pass a flag or message to the view
+        //     return view('admin.balance.view', ['isEmpty' => true]);
+        //     // echo "empty";
+        // }
+
+
+        return ($result);
     }
 
-    return $result;
-    }
-
-    public function getAccounts(){
+    public function getAccounts()
+    {
         $result = Accounts::all();
-        return $result;
 
+        // if ($result->isEmpty()) {
+        //     // If the result set is empty, pass a flag or message to the view
+        //     // return view('admin.balance.view', ['isEmpty' => true]);
+        // }
+
+        return ($result);
     }
 
     // public function join(){
@@ -47,10 +62,10 @@ class BalanceController extends Controller
 
 
 
-     
+
     public function index()
     {
-        // dd($this->join());
+        // dd($this->getAll());
 
         return view('admin.balance.view', [
             "data" => $this->getAll(),
@@ -83,22 +98,31 @@ class BalanceController extends Controller
             // Add validation rules for other fields
         ]);
 
-        // Create a new instance of your model and fill it with the validated data
-    $model = new Balance();
-    $model->fill($validatedData);
+        // Check if the information already exists
+    $existingRecord = Balance::where('acc_id', $validatedData['acc_id'])->first();
 
-    // echo $this->message;
-    // dd($model);
-    $store = $model->save();
-
-    if(!$store){
-        Alert::error('Error', 'Something went wrong');
-
+    if ($existingRecord) {
+        // Information already exists, you can handle it as per your requirements
+        Alert::error('Error', 'User already has a balance');
         return redirect()->route('balances.index');
     }
 
-    Alert::success('Success', 'Balance has been created!!');
-    return redirect()->route('balances.index');
+        // Create a new instance of your model and fill it with the validated data
+        $model = new Balance();
+        $model->fill($validatedData);
+
+        // echo $this->message;
+        // dd($model);
+        $store = $model->save();
+
+        if (!$store) {
+            Alert::error('Error', 'Something went wrong');
+
+            return redirect()->route('balances.index');
+        }
+
+        Alert::success('Success', 'Balance has been created!!');
+        return redirect()->route('balances.index');
     }
 
     /**
@@ -122,7 +146,39 @@ class BalanceController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+
+        $resource = Balance::find($id);
+
+          // Validate the request data
+          $validatedData = $request->validate([
+            // 'acc_id' => 'required',
+            'wallet_balance' => 'required',
+            'main_balance' => 'required',
+            'card_1' => 'required',
+            'card_2' => 'required',
+            'card_3' => 'required',
+            'card_4' => 'required',
+            // Add validation rules for other fields
+        ]);
+
+        // dd($id, $validatedData);
+
+        if (!$resource) {
+            Alert::error('Error', 'Something went wrong');
+    
+            return redirect()->route('balances.index');
+        }
+    
+        // Delete the resource
+        $resource->update($validatedData);
+         // Display a success message using toastr
+        
+        Alert::success('Success', 'Balance has been updated!!');
+        
+        return view('admin.balance.view', [
+            "data" => $this->getAll(),
+            "accounts" => $this->getAccounts()
+        ]);
     }
 
     /**
@@ -130,6 +186,29 @@ class BalanceController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+             // Find the resource by ID
+    $resource = Balance::find($id);
+
+    // dd($resource);
+
+    // Check if the resource exists
+    if (!$resource) {
+        Alert::error('Error', 'Something went wrong');
+
+        return redirect()->route('balances.index');
+    }
+
+    // dd($resource);
+
+    // Delete the resource
+    $resource->delete();
+     // Display a success message using toastr
+    
+    Alert::success('Success', 'Info has been deleted!!');
+    
+    return view('admin.balance.view', [
+        "data" => $this->getAll(),
+        "accounts" => $this->getAccounts()
+    ]);
     }
 }
