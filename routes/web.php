@@ -24,9 +24,14 @@ Route::get('/', [PagesController::class, 'index']);
 Auth::routes();
 
 Route::get('/dashboard', [App\Http\Controllers\PagesController::class, 'index'])->name('dashboard');
-Route::get('/card-control', [App\Http\Controllers\PagesController::class, 'cardControl'])->name('cardControl');
-Route::get('/wire-transfer', [App\Http\Controllers\PagesController::class, 'wireTransfer'])->name('wireTransfer');
-Route::get('/transaction-history', [App\Http\Controllers\PagesController::class, 'transactionHistory'])->name('transactionHistory');
+Route::get('/cards', [App\Http\Controllers\PagesController::class, 'cardControl'])->name('cardControl');
+Route::get('/payments', [App\Http\Controllers\PagesController::class, 'payments'])->name('payments');
+Route::get('/payment-exchange', [App\Http\Controllers\PagesController::class, 'paymentExchange'])->name('paymentExchange');
+Route::get('/payment-bill', [App\Http\Controllers\PagesController::class, 'paymentBill'])->name('paymentBill');
+Route::get('/payment-request', [App\Http\Controllers\PagesController::class, 'paymentRequest'])->name('paymentRequest');
+Route::get('/payment-transfer', [App\Http\Controllers\PagesController::class, 'paymentTransfer'])->name('paymentTransfer');
+Route::get('/activity', [App\Http\Controllers\PagesController::class, 'activity'])->name('activity');
+Route::get('/repots', [App\Http\Controllers\PagesController::class, 'reports'])->name('reports');
 
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');

@@ -12,6 +12,7 @@ class PagesController extends Controller
     // }
     
     public function index() {
+        
         return view('user.dashboard');
         // return "index works";
     }
@@ -21,8 +22,40 @@ class PagesController extends Controller
         // return "index works";
     }
 
-    public function wireTransfer() {
-        return view('user.wire-transfer');
+    public function activity() {
+        return view('user.activity');
         // return "index works";
     }
+
+    public function payments() {
+        return view('user.page-payments');
+        // return "index works";
+    }
+
+    public function paymentBill() {
+        return view('user.page-payment-bill');
+        // return "index works";
+    }
+    
+    public function paymentRequest() {
+        return view('user.page-payment-request');
+        // return "index works";
+    }
+
+    public function paymentTransfer() {
+        return view('user.page-payment-transfer');
+        // return "index works";
+    }
+
+    public function paymentExchange() {
+        return view('user.page-payment-exchange');
+        // return "index works";
+    }
+
+    public function reports() {
+        return view('user.page-reports');
+        // return "index works";
+    }
+
+
 }
