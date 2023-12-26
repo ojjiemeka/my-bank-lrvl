@@ -30,7 +30,9 @@
     <div id="page">
 
         <!-- Footer Bar -->
+        @if ($menuBar)
         @include('layouts.components.user.footer-bar')
+        @endif
 
         <!-- Page Content - Only Page Elements Here-->
         <div class="page-content footer-clear">

@@ -8,7 +8,7 @@
                     <p class="color-white opacity-80 header-date"></p>
                     <h1 class="color-white">Welcome</h1>
                 </div>
-                <div class="align-self-center ms-auto">
+                <div class="align-self-centerd-flex d-flex ms-auto">
                     <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-highlights" class="icon bg-white color-theme rounded-m shadow-xl">
                         <i class="bi bi-palette-fill color-black font-16"></i>
                     </a>

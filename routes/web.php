@@ -6,6 +6,7 @@ use App\Http\Controllers\AccountsController;
 use App\Http\Controllers\BalanceController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RestrictionController;
+use App\Http\Controllers\UserAuth\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,8 @@ use App\Http\Controllers\RestrictionController;
 */
 
 
-Route::get('/', [PagesController::class, 'index']);
+Route::get('/', [AuthController::class, 'signIn'])->name('signIn');
+// Route::get('/sign-up', [AuthController::class, 'signUp'])->name('signUp');
 
 Auth::routes();
 
