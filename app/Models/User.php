@@ -24,7 +24,7 @@ class User extends Authenticatable
         'email',
         'password',
         'acc_userid',
-        'status'
+        'is_admin'
     ];
 
     /**
@@ -49,14 +49,12 @@ class User extends Authenticatable
 
     public function isAdmin()
     {
-        return $this->status === 'admin';
+        return $this->is_admin;
     }
 
-    // protected function role(): Attribute
-    // {
-    //     return new Attribute(
-    //         get: fn($value) => ['user', 'admin'][$value]
-    //     );
-    // }
+    public function account()
+    {
+        return $this->hasOne(Accounts::class, 'email', 'email');
+    }
 
 }

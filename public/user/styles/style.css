@@ -4765,4 +4765,9 @@ input[type=range] {
 	 .page-title {
 		padding: 5px 10px 30px 10px !important;
 	 }
+
+   .page-title h1 {
+    font-size: 23px;
+    /* margin-bottom: -3px; */
+}
   }

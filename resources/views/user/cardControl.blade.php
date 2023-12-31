@@ -5,57 +5,6 @@
       <div class="page-content footer-clear">
 
         <!-- Page Title-->
-        <div class="pt-3">
-            <div class="page-title d-flex">
-                <div class="align-self-center me-auto">
-                    <p class="color-highlight">Hello Enabled</p>
-                    <h1 class="color-theme">Cards</h1>
-                </div>
-                <div class="align-self-center ms-auto">
-                    <a href="#"
-                    data-bs-toggle="offcanvas"
-                    data-bs-target="#menu-add-card"
-                    class="icon gradient-green color-white shadow-bg shadow-bg-xs rounded-m">
-                        <i class="bi bi-plus-circle font-17"></i>
-                    </a>
-                    <a href="#"
-                    data-bs-toggle="offcanvas"
-                    data-bs-target="#menu-notifications"
-                    class="icon gradient-blue color-white shadow-bg shadow-bg-xs rounded-m">
-                        <i class="bi bi-bell-fill font-17"></i>
-                        <em class="badge bg-red-dark color-white scale-box">3</em>
-                    </a>
-                    <a href="#"
-                    data-bs-toggle="dropdown"
-                    class="icon gradient-blue shadow-bg shadow-bg-s rounded-m">
-                        <img src="images/pictures/25s.jpg" width="45" class="rounded-m" alt="img">
-                    </a>
-                    <!-- Page Title Dropdown Menu-->
-                    <div class="dropdown-menu">
-                        <div class="card card-style shadow-m mt-1 me-1">
-                            <div class="list-group list-custom list-group-s list-group-flush rounded-xs px-3 py-1">
-                                <a href="page-wallet.html" class="list-group-item">
-                                    <i class="has-bg gradient-green shadow-bg shadow-bg-xs color-white rounded-xs bi bi-credit-card"></i>
-                                    <strong class="font-13">Wallet</strong>
-                                </a>
-                                <a href="page-activity.html" class="list-group-item">
-                                    <i class="has-bg gradient-blue shadow-bg shadow-bg-xs color-white rounded-xs bi bi-graph-up"></i>
-                                    <strong class="font-13">Activity</strong>
-                                </a>
-                                <a href="page-profile.html" class="list-group-item">
-                                    <i class="has-bg gradient-yellow shadow-bg shadow-bg-xs color-white rounded-xs bi bi-person-circle"></i>
-                                    <strong class="font-13">Account</strong>
-                                </a>
-                                <a href="page-signin-1.html" class="list-group-item">
-                                    <i class="has-bg gradient-red shadow-bg shadow-bg-xs color-white rounded-xs bi bi-power"></i>
-                                    <strong class="font-13">Log Out</strong>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         
         <!-- Card Stack - The Stack Height Below will be the card height-->
         <div class="card-stack" data-stack-height="180">
@@ -73,12 +22,12 @@
                         <h1 class="font-13 my-n1">
                             <a class="color-theme" data-bs-toggle="collapse" href="#balance3" aria-controls="balance2">Click for Balance</a>
                         </h1>
-                        <div class="collapse" id="balance3"><h2 class="color-theme font-26">$26,315</h2></div>
+                        <div class="collapse" id="balance3"><h2 class="color-theme font-26">${{ number_format($balance['main_balance'], 2) }}</h2></div>
                     </div>
                 </div>
                 <strong class="card-top no-click font-12 p-3 color-white font-monospace">Main Account</strong>
-                <strong class="card-bottom no-click p-3 text-start color-white font-monospace">1234 5678 1234 5661</strong>
-                <strong class="card-bottom no-click p-3 text-end color-white font-monospace">08 / 2025</strong>
+                <strong class="card-bottom no-click p-3 text-start color-white font-monospace" id="balance3">4233 5622 8363 93763</strong>
+                <strong class="card-bottom no-click p-3 text-end color-white font-monospace" id="balance3">04 / 2026</strong>
                 <div class="card-overlay bg-black opacity-50"></div>
             </div>
             
@@ -92,12 +41,12 @@
                         <h1 class="font-13 my-n1">
                             <a class="color-theme" data-bs-toggle="collapse" href="#balance1" aria-controls="balance1">Click for Balance</a>
                         </h1>
-                        <div class="collapse" id="balance1"><h2 class="color-theme font-26">$65,500</h2></div>
+                        <div class="collapse" id="balance1"><h2 class="color-theme font-26">${{ number_format($balance['card_2'], 2) }}</h2></div>
                     </div>
                 </div>
                 <strong class="card-top no-click font-12 p-3 color-white font-monospace">Company Account</strong>
-                <strong class="card-bottom no-click p-3 text-start color-white font-monospace">1234 5678 1234 5661</strong>
-                <strong class="card-bottom no-click p-3 text-end color-white font-monospace">08 / 2025</strong>
+                <strong class="card-bottom no-click p-3 text-start color-white font-monospace" id="balance1">6425 8939 4315 9733</strong>
+                <strong class="card-bottom no-click p-3 text-end color-white font-monospace" id="balance1">01 / 2027</strong>
                 <div class="card-overlay bg-black opacity-50"></div>
             </div>
             
@@ -111,12 +60,12 @@
                         <h1 class="font-13 my-n1">
                             <a class="color-theme" data-bs-toggle="collapse" href="#balance2" aria-controls="balance2">Click for Balance</a>
                         </h1>
-                        <div class="collapse" id="balance2"><h2 class="color-theme font-26">$15,100</h2></div>
+                        <div class="collapse" id="balance2"><h2 class="color-theme font-26">${{ number_format($balance['card_3'], 2) }}</h2></div>
                     </div>
                 </div>
                 <strong class="card-top no-click font-12 p-3 color-white font-monospace">Savings Account</strong>
-                <strong class="card-bottom no-click p-3 text-start color-white font-monospace">1234 5678 1234 5661</strong>
-                <strong class="card-bottom no-click p-3 text-end color-white font-monospace">08 / 2025</strong>
+                <strong class="card-bottom no-click p-3 text-start color-white font-monospace" id="balance2">8689 6383 8624 67892</strong>
+                <strong class="card-bottom no-click p-3 text-end color-white font-monospace" id="balance2">08 / 2027</strong>
                 <div class="card-overlay bg-black opacity-50"></div>
             </div>
         </div>
@@ -193,7 +142,7 @@
                                 <i class="has-bg gradient-green color-white rounded-xs bi bi-cash-coin"></i>
                                 <div><strong>Savings</strong><span>14  Transactions</span></div>
                                 <span class="badge bg-transparent color-theme text-end font-15">
-                                   $414<br>
+                                   $414,000<br>
                                    <em class="fst-normal font-12 opacity-30">13.5%</em>
                                 </span>
                             </a>
@@ -201,7 +150,7 @@
                                 <i class="has-bg gradient-yellow color-white rounded-xs bi bi-droplet"></i>
                                 <div><strong>Utilities</strong><span>11 Transactions</span></div>
                                 <span class="badge bg-transparent color-theme text-end font-15">
-                                    $631<br>
+                                    $6,310<br>
                                     <em class="fst-normal font-12 opacity-30">20.3%</em>
                                 </span>
                             </a>
@@ -209,7 +158,7 @@
                                 <i class="has-bg gradient-blue color-white rounded-xs bi bi-bag"></i>
                                 <div><strong>Shopping</strong><span>23 Transactions</span></div>
                                 <span class="badge bg-transparent color-theme text-end font-15">
-                                    $950<br>
+                                    $95,000<br>
                                     <em class="fst-normal font-12 opacity-30">45.7%</em>
                                 </span>
                             </a>
@@ -217,7 +166,7 @@
                                 <i class="has-bg gradient-red color-white rounded-xs bi bi-gear"></i>
                                 <div><strong>Construction</strong><span>34 Transactions</span></div>
                                 <span class="badge bg-transparent color-theme text-end font-15">
-                                    $315<br>
+                                    $6,315,765<br>
                                     <em class="fst-normal font-12 opacity-30">19.5%</em>
                                 </span>
                             </a>
@@ -234,7 +183,7 @@
                     
                     <!-- Tab 3 -->
                     <div class="collapse" id="tab-x" data-bs-parent="#tab-group-2">
-                        <a href="page-activity.html" class="d-flex py-1">
+                        <a href="{{route('activity')}}" class="d-flex py-1">
                             <div class="align-self-center">
                                 <span class="icon rounded-s me-2 gradient-orange shadow-bg shadow-bg-xs"><i class="bi bi-google color-white"></i></span>
                             </div>
@@ -248,7 +197,7 @@
                             </div>
                         </a>
                         <div class="divider my-2 opacity-50"></div>
-                        <a href="page-activity.html" class="d-flex py-1">
+                        <a href="{{route('activity')}}" class="d-flex py-1">
                             <div class="align-self-center">
                                 <span class="icon rounded-s me-2 gradient-blue shadow-bg shadow-bg-xs"><i class="bi bi-cloud-fill color-white"></i></span>
                             </div>
@@ -262,25 +211,27 @@
                             </div>
                         </a>
                         <div class="divider my-2 opacity-50"></div>
-                        <a href="page-activity.html" class="d-flex py-1">
+                        <a href="{{route('activity')}}" class="d-flex py-1">
                             <div class="align-self-center">
-                                <span class="icon rounded-s me-2 gradient-orange shadow-bg shadow-bg-xs">
-                                    <img src="images/pictures/31s.jpg" width="46" class="rounded-s" alt="img">
+                                <span class="icon rounded-s me-2 shadow-bg shadow-bg-xs">
+                                    <img src="{{asset('images/transaction-14856.svg')}}" width="46" class="rounded-s" alt="img">
                                 </span>
                             </div>
                             <div class="align-self-center ps-1">
-                                <h5 class="pt-1 mb-n1">Jane Son</h5>
-                                <p class="mb-0 font-11 opacity-70">14th March <span class="copyright-year"></span></p>
+                                <h5 class="pt-1 mb-n1">Hien Thi Thai</h5>
+                                <p class="mb-0 font-11 opacity-70">26th dec <span class="copyright-year"></span></p>
                             </div>
                             <div class="align-self-center ms-auto text-end">
-                                <h4 class="pt-1 mb-n1 color-green-dark">$130.55</h4>
+                                <h4 class="pt-1 mb-n1 color-green-dark">$13,000.55</h4>
                                 <p class="mb-0 font-11">Direct Transfer</p>
                             </div>
                         </a>
                         <div class="divider my-2 opacity-50"></div>
-                        <a href="page-activity.html" class="d-flex py-1">
+                        <a href="{{route('activity')}}" class="d-flex py-1">
                             <div class="align-self-center">
-                                <span class="icon rounded-s me-2 gradient-green shadow-bg shadow-bg-xs"><i class="bi bi-caret-up-fill color-white"></i></span>
+                                <span class="icon rounded-s me-2 shadow-bg shadow-bg-xs">
+                                    <img src="{{asset('images/bitcoin-orange-coin-logo-symbol-19563.svg')}}" width="46" class="rounded-s" alt="img">
+                                </span>
                             </div>
                             <div class="align-self-center ps-1">
                                 <h5 class="pt-1 mb-n1">Bitcoin</h5>
@@ -292,7 +243,7 @@
                             </div>
                         </a>
                         <div class="divider my-2 opacity-50"></div>
-                        <a href="page-activity.html" class="d-flex py-1">
+                        <a href="{{route('activity')}}" class="d-flex py-1">
                             <div class="align-self-center">
                                 <span class="icon rounded-s me-2 gradient-yellow shadow-bg shadow-bg-xs"><i class="bi bi-pie-chart-fill color-white"></i></span>
                             </div>

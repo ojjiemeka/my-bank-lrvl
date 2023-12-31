@@ -2,49 +2,6 @@
 
 @section('content')
         <!-- Page Title-->
-        <div class="pt-3">
-            <div class="page-title d-flex">
-                <div class="align-self-center me-auto">
-                    <p class="color-white opacity-80 header-date"></p>
-                    <h1 class="color-white">Welcome</h1>
-                </div>
-                <div class="align-self-centerd-flex d-flex ms-auto">
-                    <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-highlights" class="icon bg-white color-theme rounded-m shadow-xl">
-                        <i class="bi bi-palette-fill color-black font-16"></i>
-                    </a>
-                    <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-notifications" class="icon bg-white color-theme rounded-m shadow-xl">
-                        <i class="bi bi-bell-fill color-black font-17"></i>
-                        <em class="badge bg-red-light color-white scale-box">3</em>
-                    </a>
-                    <a href="#" data-bs-toggle="dropdown" class="icon rounded-m shadow-xl">
-                        <img src="images/pictures/25s.jpg" width="45" class="rounded-m" alt="img">
-                    </a>
-                    <!-- Page Title Dropdown Menu-->
-                    <div class="dropdown-menu">
-                        <div class="card card-style shadow-m mt-1 me-1">
-                            <div class="list-group list-custom list-group-s list-group-flush rounded-xs px-3 py-1">
-                                <a href="page-wallet.html" class="list-group-item">
-                                    <i class="has-bg gradient-green shadow-bg shadow-bg-xs color-white rounded-xs bi bi-credit-card"></i>
-                                    <strong class="font-13">Wallet</strong>
-                                </a>
-                                <a href="page-activity.html" class="list-group-item">
-                                    <i class="has-bg gradient-blue shadow-bg shadow-bg-xs color-white rounded-xs bi bi-graph-up"></i>
-                                    <strong class="font-13">Activity</strong>
-                                </a>
-                                <a href="page-profile.html" class="list-group-item">
-                                    <i class="has-bg gradient-yellow shadow-bg shadow-bg-xs color-white rounded-xs bi bi-person-circle"></i>
-                                    <strong class="font-13">Account</strong>
-                                </a>
-                                <a href="page-signin-1.html" class="list-group-item">
-                                    <i class="has-bg gradient-red shadow-bg shadow-bg-xs color-white rounded-xs bi bi-power"></i>
-                                    <strong class="font-13">Log Out</strong>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <svg id="header-deco" viewBox="0 0 1440 600" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150">
             <path id="header-deco-1" d="M 0,600 C 0,600 0,120 0,120 C 92.36363636363635,133.79904306220095 184.7272727272727,147.59808612440193 287,148 C 389.2727272727273,148.40191387559807 501.4545454545455,135.40669856459328 592,129 C 682.5454545454545,122.5933014354067 751.4545454545455,122.77511961722489 848,115 C 944.5454545454545,107.22488038277511 1068.7272727272727,91.49282296650718 1172,91 C 1275.2727272727273,90.50717703349282 1357.6363636363635,105.25358851674642 1440,120 C 1440,120 1440,600 1440,600 Z"></path>
@@ -67,12 +24,12 @@
                                     <h1 class="font-13 my-n1">
                                         <a class="color-theme" data-bs-toggle="collapse" href="#balance3" aria-controls="balance2">Click for Balance</a>
                                     </h1>
-                                    <div class="collapse" id="balance3"><h2 class="color-theme font-26">$26,315</h2></div>
+                                    <div class="collapse" id="balance3"><h2 class="color-theme font-26">${{ number_format($balance['main_balance'], 2) }}</h2></div>
                                 </div>
                             </div>
                             <strong class="card-top no-click font-12 p-3 color-white font-monospace">Main Account</strong>
-                            <strong class="card-bottom no-click p-3 font-12 text-start color-white font-monospace">1234 5678 1234 5661</strong>
-                            <strong class="card-bottom no-click p-3 font-12 text-end color-white font-monospace">08 / 25</strong>
+                            <strong class="card-bottom no-click p-3 font-12 text-start color-white font-monospace" id="balance3">1234 5678 1234 5661</strong>
+                            <strong class="card-bottom no-click p-3 font-12 text-end color-white font-monospace" id="balance3">08 / 25</strong>
                             <div class="card-overlay bg-black opacity-50"></div>
                         </div>
                     </div>
@@ -86,12 +43,12 @@
                                     <h1 class="font-13 my-n1">
                                         <a class="color-theme" data-bs-toggle="collapse" href="#balance1" aria-controls="balance1">Click for Balance</a>
                                     </h1>
-                                    <div class="collapse" id="balance1"><h2 class="color-theme font-26">$65,500</h2></div>
+                                    <div class="collapse" id="balance1"><h2 class="color-theme font-26">${{number_format($balance['wallet_balance'], 2)}}</h2></div>
                                 </div>
                             </div>
                             <strong class="card-top no-click font-12 p-3 color-white font-monospace">Company Account</strong>
-                            <strong class="card-bottom no-click p-3 font-12 text-start color-white font-monospace">1234 5678 1234 5661</strong>
-                            <strong class="card-bottom no-click p-3 font-12 text-end color-white font-monospace">08 / 25</strong>
+                            <strong class="card-bottom no-click p-3 font-12 text-start color-white font-monospace" id="balance1">1234 5678 1234 5661</strong>
+                            <strong class="card-bottom no-click p-3 font-12 text-end color-white font-monospace" id="balance1">08 / 25</strong>
                             <div class="card-overlay bg-black opacity-50"></div>
                         </div>
                     </div>
@@ -105,12 +62,12 @@
                                     <h1 class="font-13 my-n1">
                                         <a class="color-theme" data-bs-toggle="collapse" href="#balance2" aria-controls="balance2">Click for Balance</a>
                                     </h1>
-                                    <div class="collapse" id="balance2"><h2 class="color-theme font-26">$15,100</h2></div>
+                                    <div class="collapse" id="balance2"><h2 class="color-theme font-26">${{number_format($balance['card_1'], 2)}}</h2></div>
                                 </div>
                             </div>
                             <strong class="card-top no-click font-12 p-3 color-white font-monospace">Savings Account</strong>
-                            <strong class="card-bottom no-click p-3 font-12 text-start color-white font-monospace">1234 5678 1234 5661</strong>
-                            <strong class="card-bottom no-click p-3 font-12 text-end color-white font-monospace">08 / 25</strong>
+                            <strong class="card-bottom no-click p-3 font-12 text-start color-white font-monospace" id="balance2">1234 5678 1234 5661</strong>
+                            <strong class="card-bottom no-click p-3 font-12 text-end color-white font-monospace" id="balance2">08 / 25</strong>
                             <div class="card-overlay bg-black opacity-50"></div>
                         </div>
                     </div>

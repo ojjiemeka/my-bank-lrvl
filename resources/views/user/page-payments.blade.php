@@ -5,7 +5,7 @@
       <div class="page-content footer-clear">
 
         <!-- Page Title-->
-        <div class="pt-3">
+        {{-- <div class="pt-3">
             <div class="page-title d-flex">
                 <div class="align-self-center me-auto">
                     <p class="color-highlight">Hello Enabled</p>
@@ -49,7 +49,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <div class="row text-center">
             <div class="col-6 mb-n2">

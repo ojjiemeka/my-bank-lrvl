@@ -37,6 +37,12 @@
         <!-- Page Content - Only Page Elements Here-->
         <div class="page-content footer-clear">
 
+        @if ($navBar)
+            
+        @include('layouts.components.user.nav-header')
+        @endif
+
+
             @yield('content')
 
 
@@ -46,8 +52,6 @@
         <!-- Off Canvas and Menu Elements-->
         <!-- Always outside the Page Content-->
 
-        <!-- Main Sidebar Menu -->
-        @include('layouts.components.user.menu-sidebar')
 
         <!-- Card Menu More -->
         @include('layouts.components.user.menu-card-settings')

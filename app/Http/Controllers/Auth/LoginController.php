@@ -35,6 +35,8 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+         // Apply the middleware to the login method
+        //  $this->middleware('checkRole:admin');
         $this->middleware('guest')->except('logout');
     }
 }

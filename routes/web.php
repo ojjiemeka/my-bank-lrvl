@@ -3,10 +3,12 @@
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccountsController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BalanceController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RestrictionController;
 use App\Http\Controllers\UserAuth\AuthController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,23 +22,42 @@ use App\Http\Controllers\UserAuth\AuthController;
 */
 
 
-Route::get('/', [AuthController::class, 'signIn'])->name('signIn');
-// Route::get('/sign-up', [AuthController::class, 'signUp'])->name('signUp');
+Route::get('/', [LoginController::class, 'showLoginForm'])->name('signIn');
+Route::post('/process', [AuthController::class, 'loginFunction'])->name('loginFunction');
+
+// Route::middleware(['checkRole:user'])->group(function () {
+
+
+// });
 
 Auth::routes();
 
-Route::get('/dashboard', [App\Http\Controllers\PagesController::class, 'index'])->name('dashboard');
-Route::get('/cards', [App\Http\Controllers\PagesController::class, 'cardControl'])->name('cardControl');
-Route::get('/payments', [App\Http\Controllers\PagesController::class, 'payments'])->name('payments');
-Route::get('/payment-exchange', [App\Http\Controllers\PagesController::class, 'paymentExchange'])->name('paymentExchange');
-Route::get('/payment-bill', [App\Http\Controllers\PagesController::class, 'paymentBill'])->name('paymentBill');
-Route::get('/payment-request', [App\Http\Controllers\PagesController::class, 'paymentRequest'])->name('paymentRequest');
-Route::get('/payment-transfer', [App\Http\Controllers\PagesController::class, 'paymentTransfer'])->name('paymentTransfer');
-Route::get('/activity', [App\Http\Controllers\PagesController::class, 'activity'])->name('activity');
-Route::get('/repots', [App\Http\Controllers\PagesController::class, 'reports'])->name('reports');
 
+Route::middleware(['auth', 'checkRole:user'])->group(function () {
+    
+    // Routes accessible only to users
+    Route::get('/dashboard', [App\Http\Controllers\PagesController::class, 'index'])->name('dashboard');
+    Route::get('/cards', [App\Http\Controllers\PagesController::class, 'cardControl'])->name('cardControl');
+    Route::get('/payments', [App\Http\Controllers\PagesController::class, 'payments'])->name('payments');
+    Route::get('/payment-exchange', [App\Http\Controllers\PagesController::class, 'paymentExchange'])->name('paymentExchange');
+    Route::get('/payment-bill', [App\Http\Controllers\PagesController::class, 'paymentBill'])->name('paymentBill');
+    Route::get('/payment-request', [App\Http\Controllers\PagesController::class, 'paymentRequest'])->name('paymentRequest');
+    Route::get('/payment-transfer', [App\Http\Controllers\PagesController::class, 'paymentTransfer'])->name('paymentTransfer');
+    Route::get('/activity', [App\Http\Controllers\PagesController::class, 'activity'])->name('activity');
+    Route::get('/repots', [App\Http\Controllers\PagesController::class, 'reports'])->name('reports');
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::resource('accounts', AccountsController::class);
-Route::resource('balances', BalanceController::class);
-Route::resource('restrictions', RestrictionController::class);
+    // Your admin routes go here
+});
+
+Route::middleware(['auth', 'checkRole:admin'])->group(function () {
+    // Admin routes go here
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::resource('accounts', AccountsController::class);
+    Route::resource('balances', BalanceController::class);
+    Route::resource('restrictions', RestrictionController::class);
+
+    // Other admin routes...
+});
+// Route::get('/home', [HomeController::class, 'index'])->name('home');
+   
+

@@ -20,4 +20,14 @@ class Accounts extends Model
         'acc_number',
         'email',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'email', 'email');
+    }
+
+    public function balance()
+    {
+        return $this->hasOne(Balance::class, 'acc_id', 'id');
+    }
 }

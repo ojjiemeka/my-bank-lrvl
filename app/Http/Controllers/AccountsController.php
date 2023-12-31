@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Accounts;
+use App\Models\User;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -12,10 +13,10 @@ class AccountsController extends Controller
      * Display a listing of the resource.
      */
 
-     public function __construct()
-     {
-         $this->middleware('auth');
-     }
+    //  public function __construct()
+    //  {
+    //      $this->middleware('auth');
+    //  }
      
     public function getAll()
     {
@@ -52,13 +53,16 @@ class AccountsController extends Controller
             'dob' => 'required',
             'address' => 'required',
             'acc_number' => 'required',
+            'acc_userid' => 'required',
+            'password' => 'required|min:8|confirmed',
+            // 'status' => 'required',
             // Add validation rules for other fields
         ]);
 
         // dd($validatedData);
 
         // Check if the information already exists
-    $existingRecord = Accounts::where('email', $validatedData['email'])->first();
+    $existingRecord = Accounts::where('email', $validatedData['email'])->first() && User::where('email', $validatedData['email'])->first();
 
     if ($existingRecord) {
         // Information already exists, you can handle it as per your requirements
@@ -70,9 +74,18 @@ class AccountsController extends Controller
         $model = new Accounts();
         $model->fill($validatedData);
 
+        $user = new User();
+
+        $user->name = 'user';
+        $user->is_admin = false;
+        $user->email = $request->input('email');
+        $user->acc_userid = $request->input('acc_userid');
+        $user->password = bcrypt($request->input('password'));
+
         // echo $this->message;
-        // dd($model);
-        $store = $model->save();
+        // dd($model, $user);
+        
+        $store = [$model->save() , $user->save()];
 
         if (!$store) {
             Alert::error('Error', 'Something went wrong');
@@ -145,19 +158,24 @@ class AccountsController extends Controller
     {
          // Find the resource by ID
     $resource = Accounts::find($id);
+    $mail = $resource->email;
 
-    // dd($resource);
+    $login = User::where('email', $mail)->first();
+
+    // dd($mail);
+    // dd($login);
 
     // Check if the resource exists
-    if (!$resource) {
+    if (!$resource && $login) {
         Alert::error('Error', 'Something went wrong');
 
         return redirect()->route('accounts.index');
     }
 
-    // Delete the resource
+    // // Delete the resource
     $resource->delete();
-     // Display a success message using toastr
+    $login->delete();
+    //  // Display a success message using toastr
     
     Alert::success('Success', 'Account has been deleted!!');
     
