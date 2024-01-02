@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('logins', function (Blueprint $table) {
+        Schema::create('restriction', function (Blueprint $table) {
             $table->id();
-            $table->integer('acc_id');
-            $table->string('acc_userid');
-            $table->string('status');
-            $table->string('password');
+            $table->integer('u_id');
+            $table->integer('rule');
             $table->timestamps();
         });
     }

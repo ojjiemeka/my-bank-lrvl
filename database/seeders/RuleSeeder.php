@@ -21,12 +21,8 @@ class RuleSeeder extends Seeder
             ],
             [
                 'name' => 'Rule 2',
-                'desc' => 'Access to ONLY homepage',
-            ],
-            [
-                'name' => 'Rule 3',
-                'desc' => "Access to all pages but can't withdraw from account ",
-            ],
+                'desc' => 'Access to Account',
+            ]
             // Add more admins as needed...
         ];
 

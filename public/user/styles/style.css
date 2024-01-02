@@ -1160,7 +1160,9 @@ input[type=range]::-webkit-slider-thumb {
 .bg-12 {
   background-image: url(../images/pictures/12.jpg);
 }
-
+.d-bank{
+    color: #0D17A8 !important;
+}
 
 .bg-13 {
   background-image: url(https://s7d1.scene7.com/is/image/tiaastage/homepage-hero-helping-hand?ts=1704086874411);

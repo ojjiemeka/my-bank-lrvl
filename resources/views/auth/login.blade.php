@@ -6,10 +6,11 @@
             @csrf
             <div class="card-center mx-3 px-4 py-4 bg-white rounded-m">
                 <div class="text-center">
-                    <img src="https://www.tiaa.org/content/dam/tiaa/global/logo/TIAA_logo_header_1000_1x.svg" alt="" srcset="">
-                <h1 class="font-30 font-800 mb-0">Investment Banking</h1>
+                    <img class="w-25" src="https://branditechture.agency/brand-logos/wp-content/uploads/wpdm-cache/Deutsche-Bank-900x0.png" alt="" srcset="">
+                <h1 class="color-brown-dark mb-0">Deutshce Bank</h1>
+                <h3 class="color-brown-light font-200 mb-0">Private Client Banking</h3>
                 </div>
-                <p class="mt-2">Login to your Account.</p>
+                <p class="mb-3 mt-3">Login to your Account.</p>
                 <div class="form-custom form-label form-border form-icon mb-3 bg-transparent">
                     <i class="bi bi-person-circle font-13"></i>
                     <input type="text" name="email" class="form-control rounded-xs" id="c1"
@@ -43,10 +44,13 @@
                     <i class="is-checked color-highlight font-13 bi bi-check-circle-fill"></i>
                     <i class="is-unchecked color-highlight font-13 bi bi-circle"></i>
                 </div>
-                <button type="submit" class="btn btn-full gradient-highlight shadow-bg shadow-bg-s mt-4">SIGN IN</button>
+                <div class="align-items-center d-flex justify-content-center">
+                <button type="submit" class="btn btn-full d-bank shadow-bg shadow-bg-s mt-4">SIGN IN</button>
+
+                </div>
                 <div class="row">
                     <div class="col-6 text-start">
-                        <a href="page-forgot-1.html" class="font-11 color-theme opacity-40 pt-4 d-block">Forgot
+                        <a data-bs-toggle="offcanvas" data-bs-target="#unauthrized-access" class="font-11 color-theme opacity-40 pt-4 d-block">Forgot
                             Password?</a>
                     </div>
                     {{-- <div class="col-6 text-end">

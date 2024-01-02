@@ -163,7 +163,7 @@
                     <p class="mb-0 font-11 opacity-50">24th December <span class="copyright-year"></span></p>
                 </div>
                 <div class="align-self-center ms-auto text-end">
-                    <h4 class="pt-1 mb-n1">$3240.55</h4>
+                    <h4 class="pt-1 mb-n1">$3,240.55</h4>
                     <p class="mb-0 font-11">Bill Payment</p>
                 </div>
             </a>
@@ -245,31 +245,4 @@
         </div>
     </div>
 
-    @if(session('transfer_error'))
-    <div id="menu-transfer-failed" style="width:320px" class=" offcanvas offcanvas-modal offcanvas-detached rounded-m">
-        <div class="content text-center">
-            <i style="font-size:65px;" class="scale-box bi bi-x-circle-fill color-red-dark shadow-s rounded-circle p-0 mt-3 mb-3 d-inline-block"></i>
-            <h1 class="pt-3 font-28">Transfer Failed</h1>
-            <p class="font-14 mb-0">
-                {{ $errors->first('transfer_error') }}
-            </p>
-            <a href="tel:+1 234 567 155" class="py-4 font-700 text-uppercase d-block">Tap to Call Support</a>
-            <a href="#" data-bs-toggle="offcanvas" class="btn btn-full gradient-red shadow-bg shadow-bg-xs">Okay</a>
-        </div>
-    </div>
-
-    <script type="text/javascript">
-       $(document).ready(function () {
-            // Attach a handler to the modal's shown.bs.modal event
-            $('#menu-transfer-failed').on('shown.bs.modal', function () {
-                // Remove the event handler after the modal is shown
-                $(this).off('shown.bs.modal');
-            });
-
-            // Show the modal
-            $('#menu-transfer-failed').modal('show');
-        });
-    </script>
-    
-@endif
 @endsection

@@ -121,8 +121,14 @@
             </div>
     
             <div class="divider divider-margins opacity-50"></div>
+
+            <div class="text-center">
+                <img class="w-25" src="https://branditechture.agency/brand-logos/wp-content/uploads/wpdm-cache/Deutsche-Bank-900x0.png" alt="" srcset="">
+                <h1 class="color-brown-dark mb-0">Deutshce Bank</h1>
+                <h3 class="color-brown-light font-200 mb-0">Private Client Banking</h3>
+            </div>
             <!-- Menu Copyright -->
-            <p class="px-3 font-9 opacity-30 color-theme mt-n3">Copyright <span class="copyright-year"></span></p>
+            <p class="color-theme font-11 mt-4 opacity-30 px-3 text-center">Copyright <span class="copyright-year"></span></p>
         </div>
     </div>
 </div>

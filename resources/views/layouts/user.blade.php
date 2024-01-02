@@ -7,11 +7,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport"
         content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
-        <meta name="theme-color" content="#2196F3"/>
-        <title>Investing, Advice, Retirement and Banking | TIAA</title>
-        
-        <meta name="description" content="TIIAA&#39;s mission is to help you achieve financial well-being throughout your lifetime. From expert financial advice to retirement planning, learn more about TIAA today."/>
-        <meta name="template" content="page-homepage"/>
+        <title>Deutsche Bank</title>
+      <meta property="og:title" content="Deutsche Bank">
+      <meta name="twitter:title" content="Deutsche Bank">
+        <meta name="twitter:card" content="summary">
+    <meta name="description" property="og:description" content="Discover Deutsche Bank, one of the world’s leading financial services providers. News and Information about the bank and its products"><meta name="twitter:description" content="Discover Deutsche Bank, one of the world’s leading financial services providers. News and Information about the bank and its products">    <meta name="keywords" content="Deutsche Bank">                <link rel="apple-touch-icon" sizes="180x180" href="//master.dwebcms.db.com/application/themes/default/favicon/apple-touch-icon.png">
         
     <link rel="stylesheet" type="text/css" href="{{ asset('user/styles/bootstrap.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('user/fonts/bootstrap-icons.css') }}">
@@ -24,14 +24,7 @@
     <script src="https://kit.fontawesome.com/fbc2836f9d.js" crossorigin="anonymous"></script>
     <link rel="manifest" href="_manifest.json">
     
-    <link href="{{asset('images/tiaa04016404.ico')}}" rel="shortcut icon"/>
-    <link href="/content/dam/tiaa/global/logo/tiaa_apple_icon_57.png" id="apple_icon" sizes="57x57" rel="apple-touch-icon"/>
-    <link href="/content/dam/tiaa/global/logo/tiaa_apple_icon_72.png" sizes="72x72" rel="apple-touch-icon"/>
-    <link href="/content/dam/tiaa/global/logo/tiaa_apple_icon_76.png" sizes="76x76" rel="apple-touch-icon"/>
-    <link href="/content/dam/tiaa/global/logo/tiaa_apple_icon_120.png" sizes="120x120" rel="apple-touch-icon"/>
-    <link href="/content/dam/tiaa/global/logo/tiaa_apple_icon_152.png" sizes="152x152" rel="apple-touch-icon"/> 
-	<link href="/content/dam/tiaa/global/logo/tiaa_apple_icon_167.png" sizes="167x167" rel="apple-touch-icon"/> 
-	<link href="/content/dam/tiaa/global/logo/tiaa_apple_icon_180.png" sizes="180x180" rel="apple-touch-icon"/>	
+    <link href="https://branditechture.agency/brand-logos/wp-content/uploads/wpdm-cache/Deutsche-Bank-900x0.png" rel="shortcut icon"/>
 </head>
 
 <body class="theme-light">
@@ -63,7 +56,7 @@
         
         <!-- Off Canvas and Menu Elements-->
         <!-- Always outside the Page Content-->
-        
+        @include('layouts.components.user.error')
         <!-- Main Sidebar Menu -->
         @include('layouts.components.user.menu-sidebar')
         <!-- Card Menu More -->
