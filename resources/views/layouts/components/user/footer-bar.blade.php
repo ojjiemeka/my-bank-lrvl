@@ -6,5 +6,4 @@
     <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-sidebar"><i class="bi bi-three-dots"></i><span>More</span></a>
 </div>
 
-  <!-- Main Sidebar Menu -->
-  @include('layouts.components.user.menu-sidebar')
+  

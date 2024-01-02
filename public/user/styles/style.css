@@ -119,7 +119,8 @@ Item Support: https://www.enableds.com/contact/
 
 .theme-dark .card,
 .theme-dark #preloader {
-  background-color: #0f1117;
+  /* background-color: #0f1117; */
+  background-color: #1e2025;
 }
 
 /* Generating Color Pack*/
@@ -1110,7 +1111,8 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .bg-1 {
-  background-image: url(../images/pictures/1.jpg);
+  background-image: url(https://www.swedbank.lt/img/private/d2d/cards/cardimages/card_type_914.png);
+    background-position: 0px -10px !important;
 }
 
 .bg-2 {
@@ -1126,7 +1128,8 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .bg-5 {
-  background-image: url(https://p7.hiclipart.com/preview/547/375/811/discover-card-discover-financial-services-credit-card-bank-finance-credit-card.jpg);
+  background-image: url(https://www.hsbc.bm/content/dam/hsbc/hbbm/images/cards/hsbc-premier-black-card.jpg/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg);
+  background-position: -20px -10em !important;
 }
 
 .bg-6 {
@@ -1134,7 +1137,8 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .bg-7 {
-  background-image: url(https://cdn.images.express.co.uk/img/dynamic/59/590x/1171824_1.jpg);
+  background-image: url(https://www.americanexpress.com/content/dam/amex/sv-se/foretag/Card_Art_Gold_480x304.gif);
+    background-position: 0px -55px !important;
 }
 
 .bg-8 {
@@ -1157,8 +1161,10 @@ input[type=range]::-webkit-slider-thumb {
   background-image: url(../images/pictures/12.jpg);
 }
 
+
 .bg-13 {
-  background-image: url(../images/pictures/13.jpg);
+  background-image: url(https://s7d1.scene7.com/is/image/tiaastage/homepage-hero-helping-hand?ts=1704086874411);
+  /* background-position: -20px -10em !important; */
 }
 
 .bg-14 {
@@ -4756,6 +4762,12 @@ input[type=range] {
   margin-bottom: 20px !important;
 }
 
+.send-money-icon{
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
+}
+
 @media only screen and (max-width: 320px) {
 	.ms-auto > .icon > i{
 		width:35px;
@@ -4770,4 +4782,16 @@ input[type=range] {
     font-size: 23px;
     /* margin-bottom: -3px; */
 }
+  }
+
+  @media only screen and (max-width: 425px) {
+    .bg-7 {
+      /* background-image: url(https://www.americanexpress.com/content/dam/amex/sv-se/foretag/Card_Art_Gold_480x304.gif); */
+      background-position: 0px -8px !important;
+    }
+
+    .bg-5 {
+      /* background-image: url(https://www.americanexpress.com/content/dam/amex/sv-se/foretag/Card_Art_Gold_480x304.gif); */
+      background-position: 7px -0px !important;
+    }
   }

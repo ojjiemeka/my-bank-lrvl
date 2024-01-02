@@ -23,14 +23,14 @@ class PagesController extends Controller
         // ->get();
 
         $result = Accounts::with('user', 'balance')->get();
-        
+
         foreach ($result as $account) {
             // Access user data
             $user = $account->user;
-    
+
             // Access balance data
             $balance = $account->balance;
-    
+
             // Access other account data
             $accountData = $account->toArray();
         }
@@ -39,8 +39,9 @@ class PagesController extends Controller
 
         return $result;
     }
-    
-    public function index() {
+
+    public function index()
+    {
 
         $data = $this->getAll();
 
@@ -48,17 +49,17 @@ class PagesController extends Controller
         foreach ($data as $account) {
             // Access user data
             $user = $account->user;
-    
+
             // Access balance data
             $balance = $account->balance;
-    
+
             // Access other account data
             $accountData = $account->toArray();
         }
 
         // dd($balance);
 
-        
+
         return view('user.dashboard', [
             'menuBar' => $this->menuBar,
             'navBar' => $this->navBar,
@@ -69,7 +70,8 @@ class PagesController extends Controller
         // return "index works";
     }
 
-    public function cardControl() {
+    public function cardControl()
+    {
         $title = 'Card Management';
 
         $data = $this->getAll();
@@ -80,88 +82,224 @@ class PagesController extends Controller
 
             // Access balance data
             $balance = $account->balance;
-    
+            $accountData = $account->toArray();
+
             // Access other account data
         }
 
         return view('user.cardControl', [
             'menuBar' => $this->menuBar,
+            'navBar' => $this->navBar,
             'title' => $title,
             'balance' => $balance,
+            'accountData' => $accountData,
+
         ]);
         // return "index works";
     }
 
-    public function activity() {
+    public function activity()
+    {
         $title = 'Activity';
+
+        $data = $this->getAll();
+
+        foreach ($data as $account) {
+            // Access user data
+
+            // Access balance data
+            $balance = $account->balance;
+            $accountData = $account->toArray();
+
+            // Access other account data
+        }
+        $accountData = $account->toArray();
 
         return view('user.activity', [
             'menuBar' => $this->menuBar,
-            'title' => $title
+            'navBar' => $this->navBar,
+            'title' => $title,
+            'accountData' => $accountData,
+
         ]);
         // return "index works";
     }
 
-    public function payments() {
+    public function payments()
+    {
         $title = "Payments";
-        
+
+        $data = $this->getAll();
+
+        foreach ($data as $account) {
+            // Access user data
+
+            // Access balance data
+            $accountData = $account->toArray();
+
+            // Access other account data
+        }
+
         return view('user.page-payments', [
             'menuBar' => $this->menuBar,
-            'title' => $title
+            'navBar' => $this->navBar,
+            'title' => $title,
+            'accountData' => $accountData,
 
         ]);
         // return "index works";
     }
 
-    public function paymentBill() {
+    public function paymentBill()
+    {
         $title = "Bills";
+        $data = $this->getAll();
+
+        foreach ($data as $account) {
+            // Access user data
+
+            // Access balance data
+            $accountData = $account->toArray();
+
+            // Access other account data
+        }
 
         return view('user.page-payment-bill', [
             'menuBar' => $this->menuBar,
-            'title' => $title
+            'navBar' => $this->navBar,
+            'title' => $title,
+            'accountData' => $accountData,
+
         ]);
         // return "index works";
     }
-    
-    public function paymentRequest() {
+
+    public function paymentRequest()
+    {
         $title = "Payment Requests";
+        $data = $this->getAll();
+
+        foreach ($data as $account) {
+            // Access user data
+
+            // Access balance data
+            $accountData = $account->toArray();
+
+            // Access other account data
+        }
 
         return view('user.page-payment-request', [
             'menuBar' => $this->menuBar,
-            'title' => $title
+            'navBar' => $this->navBar,
+            'title' => $title,
+            'accountData' => $accountData,
+
         ]);
         // return "index works";
     }
 
-    public function paymentTransfer() {
+    public function paymentTransfer()
+    {
         $title = "Send Money";
+        $data = $this->getAll();
+
+        foreach ($data as $account) {
+            // Access user data
+
+            // Access balance data
+            $accountData = $account->toArray();
+
+            // Access other account data
+        }
 
         return view('user.page-payment-transfer', [
             'menuBar' => $this->menuBar,
-            'title' => $title
+            'navBar' => $this->navBar,
+            'title' => $title,
+            'accountData' => $accountData,
         ]);
         // return "index works";
     }
 
-    public function paymentExchange() {
+    public function paymentExchange()
+    {
         $title = "Exchange";
+        $data = $this->getAll();
+
+        // $dt =$data->first()->fname;
+        foreach ($data as $account) {
+            // Access user data
+            // $user = $account->user;
+
+            // Access balance data
+            $balance = $account->balance;
+
+            // Access other account data
+            $accountData = $account->toArray();
+        }
 
         return view('user.page-payment-exchange', [
             'menuBar' => $this->menuBar,
-            'title' => $title
+            'navBar' => $this->navBar,
+            'title' => $title,
+            'balance' => $balance,
+            'accountData' => $accountData,
+
         ]);
         // return "index works";
     }
 
-    public function reports() {
+    public function reports()
+    {
         $title = "Reports";
 
+        $data = $this->getAll();
+
+        // $dt =$data->first()->fname;
+        foreach ($data as $account) {
+            // Access user data
+            // $user = $account->user;
+
+            // Access balance data
+            // $balance = $account->balance;
+
+            // Access other account data
+            $accountData = $account->toArray();
+        }
         return view('user.page-reports', [
             'menuBar' => $this->menuBar,
-            'title' => $title
+            'navBar' => $this->navBar,
+            'title' => $title,
+            'accountData' => $accountData,
+
         ]);
         // return "index works";
     }
 
+    public function accountProfile()
+    {
+        $title = "Settings";
+        $data = $this->getAll();
 
+        // $dt =$data->first()->fname;
+        foreach ($data as $account) {
+            // Access user data
+            $user = $account->user;
+
+            // Access balance data
+            $balance = $account->balance;
+
+            // Access other account data
+            $accountData = $account->toArray();
+        }
+
+        return view('user.page-profile', [
+            'menuBar' => $this->menuBar,
+            'navBar' => $this->navBar,
+            'title' => $title,
+            'user' => $user,
+            'balance' => $balance,
+            'accountData' => $accountData,
+        ]);
+    }
 }

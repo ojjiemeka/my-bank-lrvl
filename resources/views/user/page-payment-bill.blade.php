@@ -3,54 +3,6 @@
 @section('content')
 
     <!-- Page Content - Only Page Elements Here-->
-    <div class="page-content footer-clear">
-
-        <!-- Page Title-->
-        <div class="pt-3">
-            <div class="page-title d-flex">
-                <div class="align-self-center me-auto">
-                    <p class="color-highlight">Hello Enabled</p>
-                    <h1 class="color-theme">Pay a Bill</h1>
-                </div>
-                <div class="align-self-center ms-auto">
-                    <a href="#"
-                    data-bs-toggle="offcanvas"
-                    data-bs-target="#menu-notifications"
-                    class="icon gradient-blue color-white shadow-bg shadow-bg-xs rounded-m">
-                        <i class="bi bi-bell-fill font-17"></i>
-                        <em class="badge bg-red-dark color-white scale-box">3</em>
-                    </a>
-                    <a href="#"
-                    data-bs-toggle="dropdown"
-                    class="icon gradient-blue shadow-bg shadow-bg-s rounded-m">
-                        <img src="images/pictures/25s.jpg" width="45" class="rounded-m" alt="img">
-                    </a>
-                    <!-- Page Title Dropdown Menu-->
-                    <div class="dropdown-menu">
-                        <div class="card card-style shadow-m mt-1 me-1">
-                            <div class="list-group list-custom list-group-s list-group-flush rounded-xs px-3 py-1">
-                                <a href="page-wallet.html" class="list-group-item">
-                                    <i class="has-bg gradient-green shadow-bg shadow-bg-xs color-white rounded-xs bi bi-credit-card"></i>
-                                    <strong class="font-13">Wallet</strong>
-                                </a>
-                                <a href="page-activity.html" class="list-group-item">
-                                    <i class="has-bg gradient-blue shadow-bg shadow-bg-xs color-white rounded-xs bi bi-graph-up"></i>
-                                    <strong class="font-13">Activity</strong>
-                                </a>
-                                <a href="page-profile.html" class="list-group-item">
-                                    <i class="has-bg gradient-yellow shadow-bg shadow-bg-xs color-white rounded-xs bi bi-person-circle"></i>
-                                    <strong class="font-13">Account</strong>
-                                </a>
-                                <a href="page-signin-1.html" class="list-group-item">
-                                    <i class="has-bg gradient-red shadow-bg shadow-bg-xs color-white rounded-xs bi bi-power"></i>
-                                    <strong class="font-13">Log Out</strong>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         
         <div class="card card-style">
             <div class="content mb-0">
@@ -62,37 +14,37 @@
                     <div class="mt-3"></div>
                     <!-- Tab Bills List -->
                     <div class="collapse show" id="tab-4" data-bs-parent="#tab-group-2">
-                        <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-bill" class="d-flex py-1 mb-2">
+                        <a href="#" class="d-flex py-1 mb-2">
                             <div class="align-self-center">
                                 <h5 class="pt-1 mb-n1">Water Bill</h5>
                                 <p class="mb-0 font-11 opacity-70">Overdue by 3 Days</p>
                             </div>
                             <div class="align-self-center ms-auto text-end">
-                                <h4 class="pt-1 mb-n1">$15.35</h4>
+                                <h4 class="pt-1 mb-n1">$450.35</h4>
                                 <p class="mb-0 font-11 color-red-light">Bill Unpaid</p>
                             </div>
                         </a>
-                        <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-bill" class="d-flex py-1 mb-2">
+                        <a href="#" class="d-flex py-1 mb-2">
                             <div class="align-self-center">
                                 <h5 class="pt-1 mb-n1">Telephone Bill</h5>
                                 <p class="mb-0 font-11 opacity-70">Due in 14 Days</p>
                             </div>
                             <div class="align-self-center ms-auto text-end">
-                                <h4 class="pt-1 mb-n1">$31.41</h4>
+                                <h4 class="pt-1 mb-n1">$310.41</h4>
                                 <p class="mb-0 font-11 color-red-light">Bill Unpaid</p>
                             </div>
                         </a>
-                        <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-bill" class="d-flex py-1 mb-2">
+                        <a href="#" class="d-flex py-1 mb-2">
                             <div class="align-self-center">
                                 <h5 class="pt-1 mb-n1">Cloud Storage</h5>
                                 <p class="mb-0 font-11 opacity-70">Due in 16 Days</p>
                             </div>
                             <div class="align-self-center ms-auto text-end">
-                                <h4 class="pt-1 mb-n1">$43.21</h4>
+                                <h4 class="pt-1 mb-n1">$30.21</h4>
                                 <p class="mb-0 font-11 color-yellow-dark">Pending</p>
                             </div>
                         </a>
-                        <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-bill-paid" class="d-flex py-1 mb-2">
+                        <a href="#" class="d-flex py-1 mb-2">
                             <div class="align-self-center">
                                 <h5 class="pt-1 mb-n1">Spotify Music</h5>
                                 <p class="mb-0 font-11 opacity-70">Paid via Main Account</p>
@@ -151,16 +103,16 @@
                             <span>(required)</span>
                         </div>
                         <div class="pb-3"></div>
-                        <a href="#" class="btn btn-full gradient-green rounded-s shadow-bg shadow-bg-s mb-4">Pay Bill Now</a>
+                        <a href="#" class="btn btn-full gradient-night rounded-s shadow-bg shadow-bg-s mb-4">Pay Bill Now</a>
                     </div>
                 </div>
             </div>
         </div>
         
         <!--Account Activity Notification-->
-        <div class="card card-style gradient-red rounded-s shadow-bg shadow-bg-xs mb-3">
+        <div class="card card-style gradient-red w-25 rounded-s shadow-bg shadow-bg-xs mb-3">
             <div class="content my-2">
-                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-bill" class="d-flex">
+                <a href="#" class="d-flex">
                     <div class="align-self-center">
                         <h1 class="mb-0 font-14"><i class="bi bi-droplet color-white pe-3"></i></h1>
                     </div>
@@ -177,7 +129,7 @@
                 </a>
             </div>
         </div>
-        <div class="card card-style gradient-green rounded-s shadow-bg shadow-bg-xs">
+        <div class="card card-style gradient-blue w-25 rounded-s shadow-bg shadow-bg-xs">
             <div class="content my-2">
                 <a href="#" class="d-flex">
                     <div class="align-self-center">
@@ -198,7 +150,7 @@
         </div>
         
 
-    </div>
+ 
     <!-- End of Page Content-->
 
     <!-- Off Canvas and Menu Elements-->

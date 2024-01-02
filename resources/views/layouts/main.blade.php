@@ -17,10 +17,12 @@
     <meta name="format-detection" content="telephone=no">
 
     <!-- PAGE TITLE HERE -->
-    <title>Chase Investment Banking</title>
-
-    <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    <meta name="theme-color" content="#2196F3"/>
+    <title>Investing, Advice, Retirement and Banking | TIAA</title>
+    
+    <meta name="description" content="TIIAA&#39;s mission is to help you achieve financial well-being throughout your lifetime. From expert financial advice to retirement planning, learn more about TIAA today."/>
+    <meta name="template" content="page-homepage"/>
+    
     <link href="{{ asset('vendor/jquery-nice-select/css/nice-select.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/jquery-autocomplete/jquery-ui.css') }}" rel="stylesheet">

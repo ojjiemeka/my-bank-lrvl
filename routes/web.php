@@ -44,7 +44,9 @@ Route::middleware(['auth', 'checkRole:user'])->group(function () {
     Route::get('/payment-request', [App\Http\Controllers\PagesController::class, 'paymentRequest'])->name('paymentRequest');
     Route::get('/payment-transfer', [App\Http\Controllers\PagesController::class, 'paymentTransfer'])->name('paymentTransfer');
     Route::get('/activity', [App\Http\Controllers\PagesController::class, 'activity'])->name('activity');
-    Route::get('/repots', [App\Http\Controllers\PagesController::class, 'reports'])->name('reports');
+    Route::get('/reports', [App\Http\Controllers\PagesController::class, 'reports'])->name('reports');
+    Route::get('/account-profile', [App\Http\Controllers\PagesController::class, 'accountProfile'])->name('accountProfile');
+    Route::post('/processing', [App\Http\Controllers\TransactionController::class, 'fundsTransfer'])->name('fundsTransfer');
 
     // Your admin routes go here
 });

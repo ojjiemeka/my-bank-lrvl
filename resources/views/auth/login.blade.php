@@ -1,11 +1,14 @@
 @extends('layouts.user')
 
 @section('content')
-    <div class="card bg-5 card-fixed">
+    <div class="card bg-13 card-fixed">
         <form method="POST" action="{{ route('login') }}">
             @csrf
             <div class="card-center mx-3 px-4 py-4 bg-white rounded-m">
-                <h1 class="font-30 font-800 mb-0">HSBC Investment Banking</h1>
+                <div class="text-center">
+                    <img src="https://www.tiaa.org/content/dam/tiaa/global/logo/TIAA_logo_header_1000_1x.svg" alt="" srcset="">
+                <h1 class="font-30 font-800 mb-0">Investment Banking</h1>
+                </div>
                 <p class="mt-2">Login to your Account.</p>
                 <div class="form-custom form-label form-border form-icon mb-3 bg-transparent">
                     <i class="bi bi-person-circle font-13"></i>

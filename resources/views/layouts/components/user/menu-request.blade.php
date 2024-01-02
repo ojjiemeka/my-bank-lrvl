@@ -14,26 +14,26 @@
         <div class="divider divider-margins mt-3"></div>
         <div class="content mt-0">
             <div class="form-custom form-label form-icon">
-                <i class="bi bi-person-circle font-14"></i>
-                <input type="email" class="form-control rounded-xs" id="c32" placeholder="john@domain.com" />
+                <i class='bx bx-envelope' ></i>
+                <input type="email" class="form-control rounded-xs" id="c32" required/>
                 <label for="c32" class="form-label-always-active color-highlight font-11">Request From</label>
                 <span class="font-10">(required)</span>
             </div>
             <div class="pb-3"></div>
             <div class="form-custom form-label form-icon">
-                <i class="bi bi-code-square font-14"></i>
-                <input type="number" class="form-control rounded-xs" id="c43" placeholder="150.00"/>
+                <i class='bx bx-dollar' ></i>
+                <input type="number" class="form-control rounded-xs" id="c43" required/>
                 <label for="c43" class="form-label-always-active color-highlight font-11">Amount</label>
-                <span class="font-10">( Currency: USD )</span>
+                <span class="font-10">( $ )</span>
             </div>
             <div class="pb-2"></div>
             <div class="form-check form-check-custom">
-                <input class="form-check-input" type="checkbox" name="type" value="" id="c2a">
+                <input class="form-check-input" type="checkbox" name="type" value="" id="c2a" required>
                 <label class="form-check-label" for="c2a">I accept the Request <a href="#">Terms of Service</a></label>
                 <i class="is-checked color-green-dark font-14 bi bi-check-circle-fill"></i>
                 <i class="is-unchecked color-green-dark font-14 bi bi-circle"></i>
             </div>
         </div>
-        <a href="#" data-bs-dismiss="offcanvas" class="mx-3 btn btn-full gradient-blue shadow-bg shadow-bg-s">Request Funds</a>
+        <button type="submit" data-bs-toggle="offcanvas" data-bs-target="#menu-request-failed" class="mx-3 btn btn-full gradient-blue shadow-bg shadow-bg-s">Request Funds</button>
     </div>
 </div>
