@@ -83,12 +83,11 @@
 
         <div class="offcanvas offcanvas-bottom rounded-m offcanvas-detached" id="menu-install-pwa-ios">
             <div class="content">
-                <img src="app/icons/icon-128x128.png" alt="img" width="80" class="rounded-m mx-auto my-4">
-                <h1 class="text-center">Install PayApp</h1>
-                <p class="boxed-text-xl">
-                    Install PayApp on your home screen, and access it just like a regular app. Open your Safari menu and
-                    tap "Add to Home Screen".
-                </p>
+                <div class="text-center">
+                    <img class="w-25" src="https://branditechture.agency/brand-logos/wp-content/uploads/wpdm-cache/Deutsche-Bank-900x0.png" alt="" srcset="">
+                <h1 class="color-brown-dark mb-0">Install Deutshce Bank</h1>
+                <h3 class="color-brown-light font-200 mb-0">Private Client Banking</h3>
+                </div>
                 <a href="#"
                     class="pwa-dismiss close-menu color-theme text-uppercase font-900 opacity-50 font-11 text-center d-block mt-n2"
                     data-bs-dismiss="offcanvas">Maybe Later</a>
@@ -97,11 +96,11 @@
 
         <div class="offcanvas offcanvas-bottom rounded-m offcanvas-detached" id="menu-install-pwa-android">
             <div class="content">
-                <img src="app/icons/icon-128x128.png" alt="img" width="80" class="rounded-m mx-auto my-4">
-                <h1 class="text-center">Install PayApp</h1>
-                <p class="boxed-text-l">
-                    Install PayApp to your Home Screen to enjoy a unique and native experience.
-                </p>
+                <div class="text-center">
+                    <img class="w-25" src="https://branditechture.agency/brand-logos/wp-content/uploads/wpdm-cache/Deutsche-Bank-900x0.png" alt="" srcset="">
+                <h1 class="color-brown-dark mb-0">Install Deutshce Bank</h1>
+                <h3 class="color-brown-light font-200 mb-0">Private Client Banking</h3>
+                </div>
                 <a href="#"
                     class="pwa-install btn btn-m rounded-s text-uppercase font-900 gradient-highlight shadow-bg shadow-bg-s btn-full">Add
                     to Home Screen</a><br>

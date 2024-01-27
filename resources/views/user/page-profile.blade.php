@@ -21,12 +21,6 @@
     <div class="notch-clear"></div>
     {{-- <div class="pt-5 mt-4"></div> --}}
     <div class="card card-style overflow-visible mt-5">
-        {{-- <div class="d-flex justify-content-center mt-n5">
-            <i class='bx bxs-user-circle bx-lg'></i>
-        </div> --}}
-        {{-- <img src="images/pictures/31t.jpg" alt="img" width="180"
-            class="mx-auto rounded-circle mt-n5 shadow-l"> --}}
-        {{-- <h1 class="color-theme text-center font-30 pt-3 mb-0">{{$accountData['fname']}} {{$accountData['lname']}}</h1> --}}
         <p class="text-center font-11 mt-3"><i class="bi bi-check-circle-fill color-green-dark pe-2"></i>Verified
             Account Holder</p>
         <div class="content mt-0 mb-2">
@@ -55,7 +49,7 @@
             </div>
         </div>
     </div>
-    <div class="btn btn-full mx-3 gradient-highlight shadow-bg shadow-bg-xs">Contact Support</div>
+    <a href="{{route('support')}}" class="btn btn-full mx-3 gradient-highlight shadow-bg shadow-bg-xs">Contact Support</a>
 
 
 <div id="menu-information"
@@ -84,11 +78,11 @@
            </div>
            <div class="content mt-0">
                <h5 class="pb-3 pt-4">Personal Information</h5>
-               <div class="form-custom form-label form-border mb-3 bg-transparent">
+               {{-- <div class="form-custom form-label form-border mb-3 bg-transparent">
                    <input type="text" class="form-control rounded-xs" id="c1a" value="{{$user->acc_userid}}"/>
                    <label for="c1a" class="form-label-always-active color-highlight">Username</label>
                    <span>(required)</span>
-               </div>
+               </div> --}}
                <div class="form-custom form-label form-border mb-3 bg-transparent">
                    <input type="text" class="form-control rounded-xs" id="c1ab" value="{{$accountData['fname']}}"/>
                    <label for="c1ab" class="form-label-always-active color-highlight">First Name</label>

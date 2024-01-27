@@ -26,7 +26,10 @@ class HomeController extends Controller
     {
         // return view('home');
         $data = Accounts::all();
-         $data;
+        return view('admin.accounts.view', [
+            'data' => $data
+        ]);
+         
     }
 
     public function accounts() {

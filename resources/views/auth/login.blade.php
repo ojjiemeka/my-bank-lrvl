@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="card bg-13 card-fixed">
-        <form method="POST" action="{{ route('login') }}">
+        <form method="POST" action="{{ route('loginFunction') }}">
             @csrf
             <div class="card-center mx-3 px-4 py-4 bg-white rounded-m">
                 <div class="text-center">

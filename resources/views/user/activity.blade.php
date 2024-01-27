@@ -41,7 +41,7 @@
                                 <p class="mb-0 font-11 opacity-70">28th December <span class="copyright-year"></span></p>
                             </div>
                             <div class="align-self-center ms-auto text-end">
-                                <h4 class="pt-1 mb-n1 color-green-dark">$1,500.55</h4>
+                                <h4 class="pt-1 mb-n1 color-facebook">$1,500.55</h4>
                                 <p class="mb-0 font-11"> Received</p>
                             </div>
                         </a>
@@ -71,7 +71,7 @@
                                 <p class="mb-0 font-11 opacity-70">24th December <span class="copyright-year"></span></p>
                             </div>
                             <div class="align-self-center ms-auto text-end">
-                                <h4 class="pt-1 mb-n1 color-red-dark">$3,240.55</h4>
+                                <h4 class="pt-1 mb-n1">$3,240.55</h4>
                                 <p class="mb-0 font-11">Bill Payment</p>
                             </div>
                         </a>
@@ -87,7 +87,7 @@
                                 <p class="mb-0 font-11 opacity-70">Awaiting Approval</p>
                             </div>
                             <div class="align-self-center ms-auto text-end">
-                                <span class="btn btn-xxs gradient-green shadow-bg shadow-bg-xs">Details</span>
+                                <span class="btn btn-xxs bg-facebook shadow-bg shadow-bg-xs">Details</span>
                             </div>
                         </a>
                         <div class="divider my-2 opacity-50"></div>
@@ -105,8 +105,8 @@
                                 <p class="mb-0 font-11 opacity-70">29th December <span class="copyright-year"></span></p>
                             </div>
                             <div class="align-self-center ms-auto text-end">
-                                <h4 class="pt-1 mb-n1 color-red-dark">$250.00</h4>
-                                <p class="mb-0 font-11">Transfered</p>
+                                <h4 class="pt-1 mb-n1">$250.00</h4>
+                                <p class="mb-0 font-11">Apple Pay</p>
                             </div>
                         </a>
                         <div class="divider my-2 opacity-50"></div>
@@ -137,7 +137,7 @@
                                 <p class="mb-0 font-11 opacity-70">Awaiting Approval</p>
                             </div>
                             <div class="align-self-center ms-auto text-end">
-                                <span class="btn btn-xxs bg-green-dark shadow-bg shadow-bg-xs">Details</span>
+                                <span class="btn btn-xxs bg-facebook shadow-bg shadow-bg-xs">Details</span>
                             </div>
                         </a>
                         <div class="divider my-2 opacity-50"></div>
@@ -152,8 +152,8 @@
                                 <p class="mb-0 font-11 opacity-70">10th December <span class="copyright-year"></span></p>
                             </div>
                             <div class="align-self-center ms-auto text-end">
-                                <h4 class="pt-1 mb-n1 color-green-dark">$190,000.00</h4>
-                                <p class="mb-0 font-11"> Received</p>
+                                <h4 class="pt-1 mb-n1 color-facebook">$190,000.00</h4>
+                                <p class="mb-0 font-11"> Wire</p>
                             </div>
                         </a>
                     </div>

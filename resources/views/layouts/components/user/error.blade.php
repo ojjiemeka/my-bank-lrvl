@@ -8,7 +8,7 @@
             <p class="font-14 mb-0">
                 Account has been locked for security reasons.
             </p>
-            <a href="tel:+1 234 567 155" class=" text-danger py-4 font-500 text-uppercase d-block">Please contact our customer care on +1 800 388 234 7363</a>
+            <p class=" py-4 font-500 text-uppercase d-block">Please contact <a href="{{route('support')}}" class="text-danger">support</a></p>
             <a href="#" data-bs-toggle="offcanvas" class="btn btn-full gradient-red shadow-bg shadow-bg-xs">Okay</a>
         </div>
     </div>
@@ -20,7 +20,7 @@
             <p class="font-14 mb-0">
                 Account has been locked for security reasons.
             </p>
-            <a href="tel:+1 234 567 155" class=" text-danger py-4 font-500 text-uppercase d-block">Please contact our customer care on <br> +1 800 388 234 7363</a>
+            <p class=" py-4 font-500 text-uppercase d-block">Please contact <a href="{{route('support')}}" class="text-danger">support</a></p>
             <a href="#" data-bs-toggle="offcanvas" class="btn btn-full gradient-red shadow-bg shadow-bg-xs">Okay</a>
         </div>
     </div>
@@ -32,7 +32,7 @@
             <p class="font-14 mb-0">
                 Account has been locked for security reasons.
             </p>
-            <a href="tel:+1 234 567 155" class=" text-danger py-4 font-500 text-uppercase d-block">Please contact our customer care on <br> +1 800 388 234 7363</a>
+            <p class=" py-4 font-500 text-uppercase d-block">Please contact <a href="{{route('support')}}" class="text-danger">support</a></p>
             <a href="#" data-bs-toggle="offcanvas" class="btn btn-full gradient-red shadow-bg shadow-bg-xs">Okay</a>
         </div>
     </div>

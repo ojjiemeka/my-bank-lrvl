@@ -97,7 +97,7 @@
             <!-- Useful Links-->
             {{-- <h6 class="opacity-40 px-3 mt-n2 mb-0">Useful Links</h6> --}}
             <div class="list-group list-custom list-menu-small">
-                <a href="tel:+1 234 567 8091" class="list-group-item default-link">
+                <a href="{{route('support')}}" class="list-group-item default-link">
                     <i class="bi bi-arrow-up-circle-fill opacity-20 font-16"></i>
                     <div>Support</div>
                     <i class="bi bi-chevron-right"></i>

@@ -4,9 +4,11 @@ namespace App\Http\Controllers\UserAuth;
 
 use App\Http\Controllers\Controller;
 use App\Models\Logins;
+use App\Models\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
@@ -19,35 +21,83 @@ class AuthController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function showLoginForm() {
+    public function showLoginForm()
+    {
 
         $menuBar = false;
-        
+
         return view('userAuth.login', ['menuBar' => $menuBar]);
         // return "index works";
     }
 
-    public function loginFunction(Request $request) {
-        
-      // Validate the request data
-      $validatedData = $request->validate([
-        'acc_userid' => 'required',
-        'password' => 'required',
-    ]);
+    public function loginFunction(Request $request)
+    {
 
-    // Attempt to authenticate the user against the "logins" table
-    $user = Logins::where('acc_userid', $validatedData['acc_userid'])->first();
+        // Validate the request data
+        $validatedData = $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
 
-    dd($user);
+        $email = $request->input('email');
+        $pass = $request->input('password');
 
-    if ($user && password_verify($validatedData['password'], $user->password)) {
-        // Authentication successful
-        Auth::login($user);
-        return redirect()->intended($this->redirectTo); // Redirect to the intended page after login
-    } else {
-        // Authentication failed
-        return back()->withErrors(['credentials' => 'Invalid login credentials'])->withInput();
-    }
+        $credentials = $request->only('email', 'password');
 
+        // dd($credentials);
+
+        if(Auth::attempt($credentials)){
+            if(Auth::check() && Auth::user()->is_admin === 1){
+                 Session::flash('success', 'Welcome Admin');
+                Session::flash('alert-class', 'alert-success');
+                return redirect('/home')->withErrors([
+                    'isSuccess' => true,
+                    'message' => "Welcome Admin"
+                ], 200);
+            // return ('it works');
+            }
+            else{
+                return redirect('/dashboard')->withErrors([
+                    'isSuccess' => true,
+                    'message' => "Welcome Admin"
+                ], 200);
+            }
+            
+        }else{
+            Session::flash('error', 'Invalid Credentials!!! Check Username Or Password');
+                Session::flash('alert-class', 'alert-danger');
+                return redirect('/login')->withErrors([
+                    'isSuccess' => true,
+                    'message' => "Invalid Credentials!!! Check Username Or Password"
+                ], 200);
+            // return ('error 2');
+
+        }
+
+        // if (Auth::attempt(['email' => $validatedData['email'], 'password' => $validatedData['password']])) {
+        //     // Authentication passed
+        //     // The user is now logged in
+
+        //     // You can access the authenticated user using Auth::user()
+        //     $user = Auth::user();
+        //     if (!$user->is_admin) {
+        //         $user = Auth::user();
+
+        //         // $user = Auth::login($user);
+        //         dd($user);
+        //         return redirect()->intended($this->redirectTo);
+        //     } else {
+        //         return redirect('/home'); // Redirect to admin dashboard
+        //     }
+        //     // Your logic after successful login
+
+
+        // } else {
+        //     // Authentication failed
+        //     // Invalid email or password
+
+        //     // Your logic after failed login
+        //     return back()->withInput()->withErrors(['credentials' => 'Invalid login credentials'])->withInput();
+        // }
     }
 }

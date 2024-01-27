@@ -34,6 +34,6 @@
                 <i class="is-unchecked color-green-dark font-14 bi bi-circle"></i>
             </div>
         </div>
-        <button type="submit" data-bs-toggle="offcanvas" data-bs-target="#menu-request-failed" class="mx-3 btn btn-full gradient-blue shadow-bg shadow-bg-s">Request Funds</button>
+        <button type="submit" data-bs-toggle="offcanvas" data-bs-target="#menu-request-failed" class="mx-3 btn btn-full bg-facebook shadow-bg shadow-bg-s">Request Funds</button>
     </div>
 </div>

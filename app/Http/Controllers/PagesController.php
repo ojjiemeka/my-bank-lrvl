@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Accounts;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PagesController extends Controller
 {
@@ -17,48 +19,32 @@ class PagesController extends Controller
 
     public function getAll()
     {
-        // $result = Accounts::join('users', 'accounts.email', '=', 'users.email')
-        // ->join('balance', 'accounts.id', '=', 'balance.acc_id')
-        // ->select('accounts.*', 'users.*', 'balance.*')
-        // ->get();
+        $user = Auth::user();
 
-        $result = Accounts::with('user', 'balance')->get();
+        $userWithAccountsAndBalance = User::with(['accounts.balance'])
+        ->where('email', $user->email)
+        // ->first(['users.*', 'accounts.*', 'balance.*']);
 
-        foreach ($result as $account) {
-            // Access user data
-            $user = $account->user;
+        // return $usersWithAccounts;
+        ->first();
 
-            // Access balance data
-            $balance = $account->balance;
+        // dd($userWithAccountsAndBalance);
 
-            // Access other account data
-            $accountData = $account->toArray();
-        }
 
-        // dd($result);
-
-        return $result;
+        return $userWithAccountsAndBalance;
     }
 
     public function index()
     {
 
         $data = $this->getAll();
+        
+        // dd($data);
+        $user = $data;
+        $accountData = $data->accounts[0]->toArray();
+        $balance = $data->accounts[0]->balance;
 
-        // $dt =$data->first()->fname;
-        foreach ($data as $account) {
-            // Access user data
-            $user = $account->user;
-
-            // Access balance data
-            $balance = $account->balance;
-
-            // Access other account data
-            $accountData = $account->toArray();
-        }
-
-        // dd($balance);
-
+        // dd($accountData);
 
         return view('user.dashboard', [
             'menuBar' => $this->menuBar,
@@ -77,18 +63,13 @@ class PagesController extends Controller
         $data = $this->getAll();
 
         // $dt =$data->first()->fname;
-        foreach ($data as $account) {
-            // Access user data
+        $accountData = $data->accounts[0]->toArray();
 
-            // Access balance data
-            $balance = $account->balance;
-            $accountData = $account->toArray();
+        $balance = $data->accounts[0]->balance;
 
-            // Access other account data
-        }
 
         return view('user.cardControl', [
-            'menuBar' => $this->menuBar,
+            'menuBar' => ($this->menuBar),
             'navBar' => $this->navBar,
             'title' => $title,
             'balance' => $balance,
@@ -104,16 +85,7 @@ class PagesController extends Controller
 
         $data = $this->getAll();
 
-        foreach ($data as $account) {
-            // Access user data
-
-            // Access balance data
-            $balance = $account->balance;
-            $accountData = $account->toArray();
-
-            // Access other account data
-        }
-        $accountData = $account->toArray();
+        $accountData = $data->accounts[0]->toArray();
 
         return view('user.activity', [
             'menuBar' => $this->menuBar,
@@ -131,14 +103,7 @@ class PagesController extends Controller
 
         $data = $this->getAll();
 
-        foreach ($data as $account) {
-            // Access user data
-
-            // Access balance data
-            $accountData = $account->toArray();
-
-            // Access other account data
-        }
+        $accountData = $data->accounts[0]->toArray();
 
         return view('user.page-payments', [
             'menuBar' => $this->menuBar,
@@ -155,14 +120,7 @@ class PagesController extends Controller
         $title = "Bills";
         $data = $this->getAll();
 
-        foreach ($data as $account) {
-            // Access user data
-
-            // Access balance data
-            $accountData = $account->toArray();
-
-            // Access other account data
-        }
+        $accountData = $data->accounts[0]->toArray();
 
         return view('user.page-payment-bill', [
             'menuBar' => $this->menuBar,
@@ -179,14 +137,7 @@ class PagesController extends Controller
         $title = "Payment Requests";
         $data = $this->getAll();
 
-        foreach ($data as $account) {
-            // Access user data
-
-            // Access balance data
-            $accountData = $account->toArray();
-
-            // Access other account data
-        }
+        $accountData = $data->accounts[0]->toArray();
 
         return view('user.page-payment-request', [
             'menuBar' => $this->menuBar,
@@ -203,14 +154,7 @@ class PagesController extends Controller
         $title = "Send Money";
         $data = $this->getAll();
 
-        foreach ($data as $account) {
-            // Access user data
-
-            // Access balance data
-            $accountData = $account->toArray();
-
-            // Access other account data
-        }
+        $accountData = $data->accounts[0]->toArray();
 
         return view('user.page-payment-transfer', [
             'menuBar' => $this->menuBar,
@@ -227,16 +171,8 @@ class PagesController extends Controller
         $data = $this->getAll();
 
         // $dt =$data->first()->fname;
-        foreach ($data as $account) {
-            // Access user data
-            // $user = $account->user;
-
-            // Access balance data
-            $balance = $account->balance;
-
-            // Access other account data
-            $accountData = $account->toArray();
-        }
+        $balance = $data->accounts[0]->balance;
+        $accountData = $data->accounts[0]->toArray();
 
         return view('user.page-payment-exchange', [
             'menuBar' => $this->menuBar,
@@ -255,17 +191,8 @@ class PagesController extends Controller
 
         $data = $this->getAll();
 
-        // $dt =$data->first()->fname;
-        foreach ($data as $account) {
-            // Access user data
-            // $user = $account->user;
+        $accountData = $data->accounts[0]->toArray();
 
-            // Access balance data
-            // $balance = $account->balance;
-
-            // Access other account data
-            $accountData = $account->toArray();
-        }
         return view('user.page-reports', [
             'menuBar' => $this->menuBar,
             'navBar' => $this->navBar,
@@ -280,18 +207,10 @@ class PagesController extends Controller
     {
         $title = "Settings";
         $data = $this->getAll();
-
+        $user = $data;
         // $dt =$data->first()->fname;
-        foreach ($data as $account) {
-            // Access user data
-            $user = $account->user;
-
-            // Access balance data
-            $balance = $account->balance;
-
-            // Access other account data
-            $accountData = $account->toArray();
-        }
+        $accountData = $data->accounts[0]->toArray();
+        $balance = $data->accounts[0]->balance;
 
         return view('user.page-profile', [
             'menuBar' => $this->menuBar,
@@ -300,6 +219,27 @@ class PagesController extends Controller
             'user' => $user,
             'balance' => $balance,
             'accountData' => $accountData,
+        ]);
+    }
+
+    public function support()
+    {
+        $menuBar = false;
+        $navBar = true;
+        $title = "Support";
+        $data = $this->getAll();
+        $user = $data;
+
+        // $dt =$data->first()->fname;
+        $accountData = $data->accounts[0]->toArray();
+
+        return view('user.support', [
+            'menuBar' => $menuBar,
+            'navBar' => $navBar,
+            'title' => $title,
+            'user' => $user,
+            'accountData' => $accountData,
+
         ]);
     }
 }

@@ -52,9 +52,9 @@ class User extends Authenticatable
         return $this->is_admin;
     }
 
-    public function account()
+    public function accounts()
     {
-        return $this->hasOne(Accounts::class, 'email', 'email');
+        return $this->hasMany(Accounts::class, 'email', 'email');
     }
 
 }

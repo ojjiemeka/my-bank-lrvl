@@ -79,7 +79,7 @@ class AccountsController extends Controller
         $user->name = 'user';
         $user->is_admin = false;
         $user->email = $request->input('email');
-        $user->acc_userid = $request->input('acc_userid');
+        $user->acc_userid = $model->id;
         $user->password = bcrypt($request->input('password'));
 
         // echo $this->message;
@@ -129,6 +129,8 @@ class AccountsController extends Controller
             'dob' => 'required',
             'address' => 'required',
             'acc_number' => 'required',
+            'acc_userid' => 'required',
+
             // Add validation rules for other fields
         ]);
 

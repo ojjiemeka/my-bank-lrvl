@@ -47,6 +47,7 @@ Route::middleware(['auth', 'checkRole:user'])->group(function () {
     Route::get('/reports', [App\Http\Controllers\PagesController::class, 'reports'])->name('reports');
     Route::get('/account-profile', [App\Http\Controllers\PagesController::class, 'accountProfile'])->name('accountProfile');
     Route::post('/processing', [App\Http\Controllers\TransactionController::class, 'fundsTransfer'])->name('fundsTransfer');
+    Route::get('/support', [App\Http\Controllers\PagesController::class, 'support'])->name('support');
 
     // Your admin routes go here
 });

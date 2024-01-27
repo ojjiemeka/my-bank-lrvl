@@ -78,7 +78,7 @@
             </div>
 
         </div>
-        <button type="button" data-bs-toggle="offcanvas" data-bs-target="#menu-transfer-failed" class="mx-3 mb-3 btn btn-full gradient-green shadow-bg shadow-bg-s">Transfer Funds</button>
+        <button type="button" data-bs-toggle="offcanvas" data-bs-target="#menu-transfer-failed" class="mx-3 mb-3 btn btn-full bg-facebook shadow-bg shadow-bg-s">Transfer Funds</button>
 
     {{-- </form> --}}
     </div>

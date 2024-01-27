@@ -1,7 +1,7 @@
 <div class="pt-3">
     <div class="page-title d-flex">
         <div class="align-self-center me-auto">
-            <p class="{{ isset($title) && in_array($title, ['Send Money', 'Bills', 'Payment Requests', 'Exchange', '']) ? '' : 'color-white' }} opacity-80 header-date mb-1"></p>
+            <p class="{{ isset($title) && in_array($title, ['Send Money', 'Bills', 'Payment Requests', 'Exchange']) ? '' : 'color-white' }} opacity-80 header-date mb-1"></p>
 
             <h1 class="{{ isset($title) && in_array($title, ['Send Money', 'Bills', 'Payment Requests', 'Exchange'])? '' : 'color-white' }}">
                 {{ isset($title) ? $title : 'Welcome ' . $accountData['fname'] }}

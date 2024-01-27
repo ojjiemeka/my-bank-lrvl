@@ -44,7 +44,7 @@
                                 </div>
                             </div>
                         </div>
-                        <strong class="card-top no-click font-12 p-3 color-white font-monospace">TIAA Plantinum</strong>
+                        <strong class="card-top no-click font-12 p-3 color-white font-monospace">Checkings Plantinum</strong>
                         <strong class="card-bottom no-click p-3 font-12 text-start color-white font-monospace"
                             id="balance3">4233 5622 8363 93763</strong>
                         <strong class="card-bottom no-click p-3 font-12 text-end color-white font-monospace"
@@ -70,7 +70,7 @@
                                 </div>
                             </div>
                         </div>
-                        <strong class="card-top no-click font-12 p-3 color-white font-monospace">Company Account</strong>
+                        <strong class="card-top no-click font-12 p-3 color-white font-monospace">Savers Plus Account</strong>
                         <strong class="card-bottom no-click p-3 font-12 text-start color-white font-monospace"
                             id="balance1">6425 8939 4315 9733</strong>
                         <strong class="card-bottom no-click p-3 font-12 text-end color-white font-monospace"
@@ -156,7 +156,7 @@
             <a href="#" class="d-flex py-1">
                 <div class="align-self-center">
                     <span class="icon rounded-s me-2 shadow-bg shadow-bg-s"><i
-                            class="bi bi-google color-white"></i></span>
+                            class="bi bi-google color-red-light"></i></span>
                 </div>
                 <div class="align-self-center ps-1">
                     <h5 class="pt-1 mb-n1">Google Ads</h5>
@@ -171,7 +171,7 @@
             <a href="#" class="d-flex py-1">
                 <div class="align-self-center">
                     <span class="icon rounded-s me-2 shadow-bg shadow-bg-s"><i
-                            class="bi bi-caret-up-fill color-white"></i></span>
+                            class="bi bi-caret-up-fill color-green-dark"></i></span>
                 </div>
                 <div class="align-self-center ps-1">
                     <h5 class="pt-1 mb-n1">Bitcoin</h5>
@@ -186,7 +186,7 @@
             <a href="#" class="d-flex py-1">
                 <div class="align-self-center">
                     <span class="icon rounded-s me-2 shadow-bg shadow-bg-s"><i
-                            class="bi bi-pie-chart-fill color-white"></i></span>
+                            class="bi bi-pie-chart-fill color-facebook"></i></span>
                 </div>
                 <div class="align-self-center ps-1">
                     <h5 class="pt-1 mb-n1">Dividends</h5>
