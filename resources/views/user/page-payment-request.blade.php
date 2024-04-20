@@ -2,67 +2,344 @@
 
 @section('content')
 
-<!-- Page Content - Only Page Elements Here-->
-        <!-- Page Title-->
-       
-        <div class="tabs tabs-links" id="tab-group-6">
-            <div class="tab-controls bg-transparent mx-3 mb-3">
-                <a class="font-13 rounded-s" data-bs-toggle="collapse" href="#tab-16" aria-expanded="true">From Contacts</a>
-            </div>
-            <div class="card card-style">
-                <div class="content my-1">
-                    <div class="collapse show" id="tab-16" data-bs-parent="#tab-group-6">
-                        <div class="list-group list-custom list-group-m list-group-flush rounded-xs">
-                            <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-request" class="list-group-item">
-                                <div><h5 class="font-15 mb-0">Hien Thi Tran</h5><span>Requested 6 weeks ago</span></div>
-                                <span class="badge rounded-xl">REQUEST</span>
-                            </a>
-                            <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-request" class="list-group-item">
-                                <div><h5 class="font-15 mb-0">Lisa .A Smith</h5><span>Never Requested</span></div>
-                                <span class="badge rounded-xl">REQUEST</span>
-                            </a>
-                            <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-request" class="list-group-item">
-                                <div><h5 class="font-15 mb-0">Artist Growth LTD</h5><span>Never Requested</span></div>
-                                <span class="badge rounded-xl">REQUEST</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="collapse" id="tab-17" data-bs-parent="#tab-group-6">
-                        <div class="form-custom form-label form-icon mt-3">
-                            <i class="bi bi-at font-16"></i>
-                            <input type="email" class="form-control rounded-xs" id="c2" placeholder="Requested From"/>
-                            <label for="c2" class="color-highlight">Requested From</label>
-                            <span>(required)</span>
-                        </div>
-                        <div class="pb-2"></div>
-                        <div class="form-custom form-label form-icon">
-                            <i class="bi bi-currency-dollar font-14"></i>
-                            <input type="number" class="form-control rounded-xs" id="c32" placeholder="Requested Amount"/>
-                            <label for="c32" class="color-highlight">Requested Amount</label>
-                            <span>(required)</span>
-                        </div>
-                        <div class="pb-2"></div>
-                        <div class="form-custom form-label form-icon mb-3">
-                            <i class="bi bi-pencil-fill font-12"></i>
-                            <textarea class="form-control rounded-xs" placeholder="Requested Details" id="c7"></textarea>
-                            <label for="c7" class="color-highlight font-11">Requested Details</label>
-                        </div>
-                        <div class="form-check form-check-custom">
-                            <input class="form-check-input" type="checkbox" name="type" value="" id="c2a">
-                            <label class="form-check-label" for="c2a">I accept the Transfer <a href="#">Terms of Service</a></label>
-                            <i class="is-checked color-blue-dark font-14 bi bi-check-circle-fill"></i>
-                            <i class="is-unchecked color-blue-dark font-14 bi bi-circle"></i>
-                        </div>
-                        <a href="#" class="btn btn-full gradient-highlight rounded-s shadow-bg shadow-bg-xs mt-3 mb-3">Send Payment Request</a>
-                    </div>
-                </div>
+<div class="header-transfer">
+    <div class="tf-container">
+        <div class="tf-statusbar d-flex justify-content-center align-items-center">
+            <a href="#" class="back-btn"><i class="icon-left on_surface_color"></i></a>
+            <h3 class="">Transfer</h3>
+        </div>
+    </div>
+</div>
+<div class="wrap-transfer-friends mt-3">
+   <div class="tf-container">
+        <div class="wrap-fixed fixed-container">
+            <div class="input-field">
+                <span class="icon-search"></span>
+                <input required class="search-field value_input" placeholder="Search" type="text" value="Andy Cody">
+                <span class="icon-clear"></span>
             </div>
         </div>
-
-    <!-- End of Page Content-->
-
-    <!-- Off Canvas and Menu Elements-->
-    <!-- Always outside the Page Content-->
+        
+        <div class="tf-tab">
+            <ul class="menu-tabs">
+                <li class="nav-tab active">Phone</li>
+                <li class="nav-tab">Bank Account</li>
+            </ul>
+            <div class="content-tab">
+                <ul class="tabs-list-item">
+                    <li>
+                        <a href="17_transfer-wallet.html" class="recipient-list">
+                            <ul class="inner">
+                                <li class="user">
+                                    <img src="bank2.0/images/user/user2.jpg" alt="image">
+                                </li>
+                                <li class="info">
+                                    <h4>Andy Cody</h4>
+                                    <p>****  ****  ****  0674</p>
+                                </li>
+                            </ul>
+                            <ul class="alphabet">
+                                <li>A</li>
+                                <li>B</li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="17_transfer-wallet.html" class="recipient-list">
+                            <ul class="inner">
+                            <li class="user">
+                                <img src="bank2.0/images/user/user3.jpg" alt="image">
+                            </li>
+                            <li class="info">
+                                <h4>Alex Tran</h4>
+                                <p>****  ****  ****  3216</p>
+                            </li>
+                            </ul>
+                            <ul class="alphabet">
+                            <li>C</li>
+                            <li>D</li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="17_transfer-wallet.html" class="recipient-list">
+                            <ul class="inner">
+                            <li class="user">
+                                <img src="bank2.0/images/user/user8.jpg" alt="image">
+                            </li>
+                            <li class="info">
+                                <h4>Themesflat</h4>
+                                <p>****  ****  ****  0674</p>
+                            </li>
+                            </ul>
+                            <ul class="alphabet">
+                            <li>E</li>
+                            <li>F</li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="17_transfer-wallet.html" class="recipient-list">
+                            <ul class="inner">
+                            <li class="user">
+                                <img src="bank2.0/images/user/user9.jpg" alt="image">
+                            </li>
+                            <li class="info">
+                                <h4>Albert Flores</h4>
+                                <p>****  ****  ****   3674</p>
+                            </li>
+                            </ul>
+                            <ul class="alphabet">
+                                <li>G</li>
+                                <li>H</li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="17_transfer-wallet.html" class="recipient-list">
+                            <ul class="inner">
+                                <li class="user">
+                                <img src="bank2.0/images/user/user10.jpg" alt="image">
+                                </li>
+                                <li class="info">
+                                <h4>Bruce Banner</h4>
+                                <p>****  ****  ****  2432</p>
+                                </li>
+                            </ul>
+                            <ul class="alphabet">
+                            <li>I</li>
+                            <li>I</li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="17_transfer-wallet.html" class="recipient-list">
+                            <ul class="inner">
+                                <li class="user">
+                                    <img src="bank2.0/images/user/user11.jpg" alt="image">
+                                </li>
+                                <li class="info">
+                                    <h4>Benny</h4>
+                                    <p>****  ****  ****  2341</p>
+                                </li>
+                            </ul>
+                            <ul class="alphabet">
+                                <li>J</li>
+                                <li>K</li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="17_transfer-wallet.html" class="recipient-list">
+                            <ul class="inner">
+                                <li class="user">
+                                <img src="bank2.0/images/user/user12.jpg" alt="image">
+                                </li>
+                                <li class="info">
+                                <h4>Christian</h4>
+                                <p>****  ****  ****  1255</p>
+                                </li>
+                            </ul>
+                            <ul class="alphabet">
+                            <li>L</li>
+                            <li>M</li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="17_transfer-wallet.html" class="recipient-list">
+                            <ul class="inner">
+                                <li class="user">
+                                <img src="bank2.0/images/user/user13.jpg" alt="image">
+                                </li>
+                                <li class="info">
+                                <h4>Cameron Williamson</h4>
+                                <p>****  ****  ****  2352</p>
+                                </li>
+                            </ul>
+                            <ul class="alphabet">
+                                <li>O</li>
+                                <li>P</li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="17_transfer-wallet.html" class="recipient-list">
+                            <ul class="inner">
+                                <li class="user">
+                                    <img src="bank2.0/images/user/user14.jpg" alt="image">
+                                </li>
+                                <li class="info">
+                                    <h4>Cody Fisher</h4>
+                                    <p>****  ****  ****  0674</p>
+                                </li>
+                            </ul>
+                            <ul class="alphabet">
+                                <li>Q</li>
+                                <li>R</li>
+                            </ul>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="tabs-list-item">
+                    <li>
+                        <a href="17_transfer-wallet.html" class="recipient-list">
+                            <ul class="inner">
+                                <li class="user">
+                                    <img src="bank2.0/images/user/user2.jpg" alt="image">
+                                </li>
+                                <li class="info">
+                                    <h4>Andy Cody</h4>
+                                    <p>****  ****  ****  0674</p>
+                                </li>
+                            </ul>
+                            <ul class="alphabet">
+                                <li>A</li>
+                                <li>B</li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="17_transfer-wallet.html" class="recipient-list">
+                            <ul class="inner">
+                            <li class="user">
+                                <img src="bank2.0/images/user/user3.jpg" alt="image">
+                            </li>
+                            <li class="info">
+                                <h4>Alex Tran</h4>
+                                <p>****  ****  ****  3216</p>
+                            </li>
+                            </ul>
+                            <ul class="alphabet">
+                            <li>C</li>
+                            <li>D</li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="17_transfer-wallet.html" class="recipient-list">
+                            <ul class="inner">
+                            <li class="user">
+                                <img src="bank2.0/images/user/user8.jpg" alt="image">
+                            </li>
+                            <li class="info">
+                                <h4>Themesflat</h4>
+                                <p>****  ****  ****  0674</p>
+                            </li>
+                            </ul>
+                            <ul class="alphabet">
+                            <li>E</li>
+                            <li>F</li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="17_transfer-wallet.html" class="recipient-list">
+                            <ul class="inner">
+                            <li class="user">
+                                <img src="bank2.0/images/user/user9.jpg" alt="image">
+                            </li>
+                            <li class="info">
+                                <h4>Albert Flores</h4>
+                                <p>****  ****  ****   3674</p>
+                            </li>
+                            </ul>
+                            <ul class="alphabet">
+                                <li>G</li>
+                                <li>H</li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="17_transfer-wallet.html" class="recipient-list">
+                            <ul class="inner">
+                                <li class="user">
+                                <img src="bank2.0/images/user/user10.jpg" alt="image">
+                                </li>
+                                <li class="info">
+                                <h4>Bruce Banner</h4>
+                                <p>****  ****  ****  2432</p>
+                                </li>
+                            </ul>
+                            <ul class="alphabet">
+                            <li>I</li>
+                            <li>I</li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="17_transfer-wallet.html" class="recipient-list">
+                            <ul class="inner">
+                                <li class="user">
+                                    <img src="bank2.0/images/user/user11.jpg" alt="image">
+                                </li>
+                                <li class="info">
+                                    <h4>Benny</h4>
+                                    <p>****  ****  ****  2341</p>
+                                </li>
+                            </ul>
+                            <ul class="alphabet">
+                                <li>J</li>
+                                <li>K</li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="17_transfer-wallet.html" class="recipient-list">
+                            <ul class="inner">
+                                <li class="user">
+                                <img src="bank2.0/images/user/user12.jpg" alt="image">
+                                </li>
+                                <li class="info">
+                                <h4>Christian</h4>
+                                <p>****  ****  ****  1255</p>
+                                </li>
+                            </ul>
+                            <ul class="alphabet">
+                            <li>L</li>
+                            <li>M</li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="17_transfer-wallet.html" class="recipient-list">
+                            <ul class="inner">
+                                <li class="user">
+                                <img src="bank2.0/images/user/user13.jpg" alt="image">
+                                </li>
+                                <li class="info">
+                                <h4>Cameron Williamson</h4>
+                                <p>****  ****  ****  2352</p>
+                                </li>
+                            </ul>
+                            <ul class="alphabet">
+                                <li>O</li>
+                                <li>P</li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="17_transfer-wallet.html" class="recipient-list">
+                            <ul class="inner">
+                                <li class="user">
+                                    <img src="bank2.0/images/user/user14.jpg" alt="image">
+                                </li>
+                                <li class="info">
+                                    <h4>Cody Fisher</h4>
+                                    <p>****  ****  ****  0674</p>
+                                </li>
+                            </ul>
+                            <ul class="alphabet">
+                                <li>Q</li>
+                                <li>R</li>
+                            </ul>
+                        </a>
+                    </li>
+            </div>     
+        </div>
+        
+   </div>    
+</div>
 
 
 @endsection

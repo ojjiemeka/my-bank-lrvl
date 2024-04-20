@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccountsController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BalanceController;
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RestrictionController;
 use App\Http\Controllers\UserAuth\AuthController;
@@ -43,11 +44,19 @@ Route::middleware(['auth', 'checkRole:user'])->group(function () {
     Route::get('/payment-bill', [App\Http\Controllers\PagesController::class, 'paymentBill'])->name('paymentBill');
     Route::get('/payment-request', [App\Http\Controllers\PagesController::class, 'paymentRequest'])->name('paymentRequest');
     Route::get('/payment-transfer', [App\Http\Controllers\PagesController::class, 'paymentTransfer'])->name('paymentTransfer');
+    Route::get('/bank-transfer', [App\Http\Controllers\PagesController::class, 'bankTransfer'])->name('bankTransfer');
+    Route::get('/pin', [App\Http\Controllers\PagesController::class, 'enterPin'])->name('enterPin');
+    Route::get('/topUp', [App\Http\Controllers\PagesController::class, 'topUp'])->name('topUp');
     Route::get('/activity', [App\Http\Controllers\PagesController::class, 'activity'])->name('activity');
     Route::get('/reports', [App\Http\Controllers\PagesController::class, 'reports'])->name('reports');
     Route::get('/account-profile', [App\Http\Controllers\PagesController::class, 'accountProfile'])->name('accountProfile');
     Route::post('/processing', [App\Http\Controllers\TransactionController::class, 'fundsTransfer'])->name('fundsTransfer');
     Route::get('/support', [App\Http\Controllers\PagesController::class, 'support'])->name('support');
+    Route::get('/done', [App\Http\Controllers\PagesController::class, 'done'])->name('done');
+    Route::get('/card-limit', [App\Http\Controllers\PagesController::class, 'cardLimit'])->name('cardLimit');
+    // Route::get('/', [App\Http\Controllers\PagesController::class, ''])->name('');
+    // Route::get('/', [App\Http\Controllers\PagesController::class, ''])->name('');
+    // Route::get('/', [App\Http\Controllers\PagesController::class, ''])->name('');
 
     // Your admin routes go here
 });
@@ -58,6 +67,7 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function () {
     Route::resource('accounts', AccountsController::class);
     Route::resource('balances', BalanceController::class);
     Route::resource('restrictions', RestrictionController::class);
+    Route::resource('history', HistoryController::class);
 
     // Other admin routes...
 });

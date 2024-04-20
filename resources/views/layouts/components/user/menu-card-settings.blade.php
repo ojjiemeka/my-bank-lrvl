@@ -1,43 +1,64 @@
-<!-- menu-size will be the dimension of your menu. If you set it to smaller than your content it will scroll-->
-<div id="menu-card-more" class="offcanvas offcanvas-bottom offcanvas-detached rounded-m">
-    <div class="menu-size" style="height:410px;">
-        <div class="d-flex mx-3 mt-3 py-1">
-            <div class="align-self-center">
-                <h1 class="mb-0">Card Settings</h1>
-            </div>
-            <div class="align-self-center ms-auto">
-                <a href="#" class="py-3 ps-4 shadow-0 me-n2" data-bs-dismiss="offcanvas">
-                    <i class="bi bi-x color-red-dark font-26"></i>
-                </a>
+ <!-- manage card modal -->
+ <div class="tf-panel card-popup">
+    <div class="panel_overlay"></div>
+    <div class="panel-box panel-down">
+        <div class="header">
+            <div class="tf-container">
+                <div class="tf-statusbar d-flex justify-content-center align-items-center">
+                    <a href="#" class="clear-panel"> <i class="icon-left"></i> </a>
+                    <h3>Manage Your Card</h3>
+                </div>
             </div>
         </div>
-        <div class="p-3 pt-2 list-group list-custom list-group-m list-group-flush">
-            <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-transfer" class="list-group-item">
-                <i class="has-bg gradient-blue color-white shadow-bg shadow-bg-xs rounded-xs bi bi-arrow-up"></i>
-                <div><strong class="font-600 font-14">Transfer Funds</strong></div>
-                <i class="bi bi-chevron-right"></i>
-            </a>
-            <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-request" class="list-group-item">
-                <i class="has-bg gradient-green color-white shadow-bg shadow-bg-xs rounded-xs bi bi-arrow-down"></i>
-                <div><strong class="font-600 font-14">Request Funds</strong></div>
-                <i class="bi bi-chevron-right"></i>
-            </a>
-            <a href="page-limits.html" class="list-group-item">
-                <i class="has-bg gradient-yellow color-white shadow-bg shadow-bg-xs rounded-xs bi-arrows-expand"></i>
-                <div><strong class="font-600 font-14">Lift Limits</strong></div>
-                <i class="bi bi-chevron-right"></i>
-            </a>
-            <a href="page-report.html" class="list-group-item">
-                <i class="has-bg gradient-magenta color-white shadow-bg shadow-bg-xs rounded-xs bi-x"></i>
-                <div><strong class="font-600 font-14">Remove Card</strong></div>
-                <i class="bi bi-chevron-right"></i>
-            </a>
-            <a href="page-report.html" class="list-group-item">
-                <i class="has-bg gradient-red color-white shadow-bg shadow-bg-xs rounded-xs bi-lock"></i>
-                <div><strong class="font-600 font-14">Report Lost</strong></div>
-                <i class="bi bi-chevron-right"></i>
-            </a>
+        <div class="content-card mt-3 mb-5">
+            <div class="tf-container">
+                <div class="tf-card-list bg_surface_color large out-line">
+                    <div class="logo">
+                        <img src="bank2.0/images/logo-banks/card-visa.png" alt="image">
+                    </div>
+                    <div class="info">
+                        <h4 class="fw_6"><a href="{{route('cardLimit')}}">Mastercard</a></h4>
+                        <p>****  ****  ****   7576</p>
+                    </div>
+                    <input type="checkbox" class="tf-checkbox circle-check" checked>
+                </div>
+                <p class="auth-line">Choose other card for payment</p>
+                <ul class="box-card">
+                    <li class="tf-card-list medium bt-line">
+                        <div class="logo">
+                        <img src="bank2.0/images/logo-banks/card-visa2.png" alt="image">
+                    </div>
+                    <div class="info">
+                        <h4 class="fw_6"><a href="{{route('cardLimit')}}">Visacard</a></h4>
+                        <p>****  ****  ****   3245</p>
+                    </div>
+                    <input type="checkbox" class="tf-checkbox circle-check">
+                    </li>
+                    <li class="tf-card-list medium bt-line">
+                        <div class="logo">
+                        <img src="bank2.0/images/logo-banks/card-visa.png" alt="image">
+                    </div>
+                    <div class="info">
+                        <h4 class="fw_6"><a href="{{route('cardLimit')}}">Mastercard</a></h4>
+                        <p>****  ****  ****   7576</p>
+                    </div>
+                    <input type="checkbox" class="tf-checkbox circle-check">
+                    </li>
+                    <li class="tf-card-list medium">
+                        <div class="logo">
+                        <img src="bank2.0/images/logo-banks/card-visa2.png" alt="image">
+                    </div>
+                    <div class="info">
+                        <h4 class="fw_6"><a href="{{route('cardLimit')}}">Visacard</a></h4>
+                        <p>****  ****  ****   7214</p>
+                    </div>
+                    <input type="checkbox" class="tf-checkbox circle-check">
+                    </li>
+                </ul>
+                <div class="tf-spacing-20"></div>
+                <a data-bs-toggle="modal" data-bs-target="#errorModal" class="tf-btn large">Add a new card <i class="icon-plus fw_7"></i> </a>
+            </div>
         </div>
-        <a href="page-card.html" class="mx-3 mb-3 btn btn-full gradient-highlight shadow-bg shadow-bg-s">View All Card Details</a>
     </div>
+    
 </div>

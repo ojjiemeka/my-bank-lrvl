@@ -164,6 +164,63 @@ class PagesController extends Controller
         ]);
         // return "index works";
     }
+    
+    public function bankTransfer()
+    {
+        $title = "Send Money";
+        $user = Auth::user();
+        $accounts = Accounts::where('email', $user->email)->with('balance')->get();
+
+        foreach ($accounts as $account) {
+            $walletBalance = $account->balance->wallet_balance;
+            // Use $walletBalance as needed
+        }
+        
+        return view('user.page-payment-transfer2', [
+            'menuBar' => $this->menuBar,
+            'navBar' => $this->navBar,
+            'title' => $title,
+            'walletBalance' => $walletBalance
+        ]);
+        // return "index works";
+    }
+
+    public function topUp()
+    {
+        $data = $this->getAll();
+        
+       
+        $balance = $data->accounts[0]->balance;
+
+        return view('user.page-topUp', [
+            'balance' => $balance,
+        ]);
+        // return "index works";
+    }
+
+    public function enterPin()
+    {
+        
+        return view('user.enterPin', [
+        ]);
+        // return "index works";
+    }
+
+    public function cardLimit()
+    {
+        
+        return view('user.cardLimit', [
+        ]);
+        // return "index works";
+    }
+
+    public function done()
+    {
+        
+        return view('user.done', [
+        ]);
+        // return "index works";
+    }
 
     public function paymentExchange()
     {
