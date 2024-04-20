@@ -9,13 +9,16 @@
      <div class="app-header">
         <div class="tf-container">
             <div class="tf-topbar d-flex justify-content-between align-items-center">
-                <a class="user-info d-flex justify-content-between align-items-center" href="69_profile.html">
-                    <img src="images/user/user1.jpg" alt="image">
-
-                    <div class="content">
-                        <h4 class="white_color">Themesflat</h4>
-                        <p class="white_color fw_4">Let’s save your money!</p>
-                    </div>
+                <a class="user-info d-flex justify-content-between align-items-center" href="{{route('accountProfile')}}">
+                    
+                    @foreach ($accounts as $account)
+                        <div class="content">
+                            <h4 class="white_color">
+                                {{ $account->fname }} {{ $account->lname }}
+                            </h4>
+                            <p class="white_color fw_4">Let’s save your money!</p>
+                        </div>
+                    @endforeach
                 </a>
                 <div class="d-flex align-items-center gap-4">
                     <a href="javascript:void(0);" id="btn-popup-left">
@@ -327,44 +330,8 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <a class="recipient-box btn-repicient" href="#">
-                                <img src="images/user/user2.jpg" alt="images">
-                                Esther
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a class="recipient-box btn-repicient" href="#">
-                                <img src="images/user/user3.jpg" alt="images">
-                                Hawkins
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a class="recipient-box btn-repicient" href="#">
-                                <img src="images/user/user4.jpg" alt="images">
-                                Jenny
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a class="recipient-box btn-repicient" href="#l">
-                                <img src="images/user/user5.jpg" alt="images">
-                                Leslie
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a class="recipient-box btn-repicient" href="#">
-                                <img src="images/user/user6.jpg" alt="images">
-                                Jerome
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a class="recipient-box btn-repicient" href="#">
-                                <img src="images/user/user7.jpg" alt="images">
-                                Esther
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a class="recipient-box btn-repicient" href="#" >
-                                <img src="images/user/user1.jpg" alt="images">
-                                Hawkins
+                                <img src="bank2.0/images/user/user2.jpg" alt="images">
+                                Andrea De Beau
                             </a>
                         </div>
                     </div>
@@ -374,19 +341,19 @@
                 <div class="swiper-container banner-tes">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img src="images/banner/banner.jpg" alt="images">
+                        <img src="bank2.0/images/banner/banner.jpg" alt="images">
                     </div>
                     <div class="swiper-slide">
-                        <img src="images/banner/banner2.jpg" alt="images">
+                        <img src="bank2.0/images/banner/banner2.jpg" alt="images">
                     </div>
                     <div class="swiper-slide">
-                        <img src="images/banner/banner3.jpg" alt="images">
+                        <img src="bank2.0/images/banner/banner3.jpg" alt="images">
                     </div>
                     <div class="swiper-slide">
-                        <img src="images/banner/banner2.jpg" alt="images">
+                        <img src="bank2.0/images/banner/banner2.jpg" alt="images">
                     </div>
                     <div class="swiper-slide">
-                        <img src="images/banner/banner3.jpg" alt="images">
+                        <img src="bank2.0/images/banner/banner3.jpg" alt="images">
                     </div>
                 </div>
                 </div>
@@ -1742,7 +1709,7 @@
                   <div class="tf-statusbar d-flex justify-content-between align-items-center">
                       <a href="#" class="clear-panel"><i class="icon-left on_surface_color"></i></a>
                       <h3 class="">Saved Repicients</h3>
-                      <a href="57_add-new-repicient.html" class="action-right"><i class="icon-plus"></i> </a>
+                      <a class="action-right"><i class="icon-plus" data-bs-toggle="modal" data-bs-target="#errorModal"></i> </a>
                   </div>
               </div>
           </div>
@@ -1752,7 +1719,7 @@
                   <div class="wrap-fixed">
                       <div class="input-field">
                           <span class="icon-search"></span>
-                          <input required class="search-field value_input" placeholder="Search" type="text" value="Andy Cody">
+                          <input required class="search-field value_input" placeholder="Search" type="text" value="Search">
                           <span class="icon-clear"></span>
                       </div>
                   </div>
@@ -1764,450 +1731,10 @@
                       </ul>
                       <div class="content-tab">
                           <ul class="tabs-list-item">
-                              <li>
-                                  <a href="54_repicient-detail.html" class="recipient-list">
-                                      <ul class="inner">
-                                          <li class="user">
-                                              <img src="images/user/user2.jpg" alt="image">
-                                          </li>
-                                          <li class="info">
-                                              <h4>Andy Cody</h4>
-                                              <p>****  ****  ****  0674</p>
-                                          </li>
-                                      </ul>
-                                      <ul class="alphabet">
-                                          <li>A</li>
-                                          <li>B</li>
-                                      </ul>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="54_repicient-detail.html" class="recipient-list">
-                                      <ul class="inner">
-                                      <li class="user">
-                                          <img src="images/user/user3.jpg" alt="image">
-                                      </li>
-                                      <li class="info">
-                                          <h4>Alex Tran</h4>
-                                          <p>****  ****  ****  3216</p>
-                                      </li>
-                                      </ul>
-                                      <ul class="alphabet">
-                                      <li>C</li>
-                                      <li>D</li>
-                                      </ul>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="54_repicient-detail.html" class="recipient-list">
-                                      <ul class="inner">
-                                      <li class="user">
-                                          <img src="images/user/user8.jpg" alt="image">
-                                      </li>
-                                      <li class="info">
-                                          <h4>Themesflat</h4>
-                                          <p>****  ****  ****  0674</p>
-                                      </li>
-                                      </ul>
-                                      <ul class="alphabet">
-                                      <li>E</li>
-                                      <li>F</li>
-                                      </ul>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="54_repicient-detail.html" class="recipient-list">
-                                      <ul class="inner">
-                                      <li class="user">
-                                          <img src="images/user/user9.jpg" alt="image">
-                                      </li>
-                                      <li class="info">
-                                          <h4>Albert Flores</h4>
-                                          <p>****  ****  ****   3674</p>
-                                      </li>
-                                      </ul>
-                                      <ul class="alphabet">
-                                          <li>G</li>
-                                          <li>H</li>
-                                      </ul>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="54_repicient-detail.html" class="recipient-list">
-                                      <ul class="inner">
-                                          <li class="user">
-                                          <img src="images/user/user10.jpg" alt="image">
-                                          </li>
-                                          <li class="info">
-                                          <h4>Bruce Banner</h4>
-                                          <p>****  ****  ****  2432</p>
-                                          </li>
-                                      </ul>
-                                      <ul class="alphabet">
-                                      <li>I</li>
-                                      <li>I</li>
-                                      </ul>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="54_repicient-detail.html" class="recipient-list">
-                                      <ul class="inner">
-                                          <li class="user">
-                                              <img src="images/user/user11.jpg" alt="image">
-                                          </li>
-                                          <li class="info">
-                                              <h4>Benny</h4>
-                                              <p>****  ****  ****  2341</p>
-                                          </li>
-                                      </ul>
-                                      <ul class="alphabet">
-                                          <li>J</li>
-                                          <li>K</li>
-                                      </ul>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="54_repicient-detail.html" class="recipient-list">
-                                      <ul class="inner">
-                                          <li class="user">
-                                          <img src="images/user/user12.jpg" alt="image">
-                                          </li>
-                                          <li class="info">
-                                          <h4>Christian</h4>
-                                          <p>****  ****  ****  1255</p>
-                                          </li>
-                                      </ul>
-                                      <ul class="alphabet">
-                                      <li>L</li>
-                                      <li>M</li>
-                                      </ul>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="54_repicient-detail.html" class="recipient-list">
-                                      <ul class="inner">
-                                          <li class="user">
-                                          <img src="images/user/user13.jpg" alt="image">
-                                          </li>
-                                          <li class="info">
-                                          <h4>Cameron Williamson</h4>
-                                          <p>****  ****  ****  2352</p>
-                                          </li>
-                                      </ul>
-                                      <ul class="alphabet">
-                                          <li>O</li>
-                                          <li>P</li>
-                                      </ul>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="54_repicient-detail.html" class="recipient-list">
-                                      <ul class="inner">
-                                          <li class="user">
-                                              <img src="images/user/user14.jpg" alt="image">
-                                          </li>
-                                          <li class="info">
-                                              <h4>Cody Fisher</h4>
-                                              <p>****  ****  ****  0674</p>
-                                          </li>
-                                      </ul>
-                                      <ul class="alphabet">
-                                          <li>Q</li>
-                                          <li>R</li>
-                                      </ul>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="54_repicient-detail.html" class="recipient-list">
-                                      <ul class="inner">
-                                          <li class="user">
-                                              <img src="images/user/user2.jpg" alt="image">
-                                          </li>
-                                          <li class="info">
-                                              <h4>Andy Cody</h4>
-                                              <p>****  ****  ****  0674</p>
-                                          </li>
-                                      </ul>
-                                      <ul class="alphabet">
-                                          <li>S</li>
-                                          <li>T</li>
-                                      </ul>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="54_repicient-detail.html" class="recipient-list">
-                                      <ul class="inner">
-                                          <li class="user">
-                                              <img src="images/user/user3.jpg" alt="image">
-                                          </li>
-                                          <li class="info">
-                                              <h4>Alex Tran</h4>
-                                              <p>****  ****  ****  3216</p>
-                                          </li>
-                                      </ul>
-                                      <ul class="alphabet">
-                                          <p>U</p>
-                                          <P>V</P>
-                                      </ul>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="54_repicient-detail.html" class="recipient-list">
-                                      <ul class="inner">
-                                          <li class="user">
-                                              <img src="images/user/user8.jpg" alt="image">
-                                          </li>
-                                          <li class="info">
-                                              <h4>Themesflat</h4>
-                                              <p>****  ****  ****  0674</p>
-                                          </li>
-                                      </ul>
-                                      <ul class="alphabet">
-                                          <li>W</li>
-                                          <li>X</li>
-                                      </ul>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="54_repicient-detail.html" class="recipient-list">
-                                      <ul class="inner">
-                                      <li class="user">
-                                          <img src="images/user/user9.jpg" alt="image">
-                                      </li>
-                                      <li class="info">
-                                          <h4>Albert Flores</h4>
-                                          <p>****  ****  ****   3674</p>
-                                      </li>
-                                      </ul>
-                                      <ul class="alphabet">
-                                      <p>Y</p>
-                                      <P>Z</P>
-                                      </ul>
-                                  </a>
-                              </li>
+                              
                           </ul>
                           <ul class="tabs-list-item">
-                              <li>
-                                  <a href="54_repicient-detail.html" class="recipient-list">
-                                      <ul class="inner">
-                                          <li class="user">
-                                              <img src="images/user/user2.jpg" alt="image">
-                                          </li>
-                                          <li class="info">
-                                              <h4>Andy Cody</h4>
-                                              <p>****  ****  ****  0674</p>
-                                          </li>
-                                      </ul>
-                                      <ul class="alphabet">
-                                          <li>A</li>
-                                          <li>B</li>
-                                      </ul>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="54_repicient-detail.html" class="recipient-list">
-                                      <ul class="inner">
-                                      <li class="user">
-                                          <img src="images/user/user3.jpg" alt="image">
-                                      </li>
-                                      <li class="info">
-                                          <h4>Alex Tran</h4>
-                                          <p>****  ****  ****  3216</p>
-                                      </li>
-                                      </ul>
-                                      <ul class="alphabet">
-                                      <li>C</li>
-                                      <li>D</li>
-                                      </ul>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="54_repicient-detail.html" class="recipient-list">
-                                      <ul class="inner">
-                                      <li class="user">
-                                          <img src="images/user/user8.jpg" alt="image">
-                                      </li>
-                                      <li class="info">
-                                          <h4>Themesflat</h4>
-                                          <p>****  ****  ****  0674</p>
-                                      </li>
-                                      </ul>
-                                      <ul class="alphabet">
-                                      <li>E</li>
-                                      <li>F</li>
-                                      </ul>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="54_repicient-detail.html" class="recipient-list">
-                                      <ul class="inner">
-                                      <li class="user">
-                                          <img src="images/user/user9.jpg" alt="image">
-                                      </li>
-                                      <li class="info">
-                                          <h4>Albert Flores</h4>
-                                          <p>****  ****  ****   3674</p>
-                                      </li>
-                                      </ul>
-                                      <ul class="alphabet">
-                                          <li>G</li>
-                                          <li>H</li>
-                                      </ul>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="54_repicient-detail.html" class="recipient-list">
-                                      <ul class="inner">
-                                          <li class="user">
-                                          <img src="images/user/user10.jpg" alt="image">
-                                          </li>
-                                          <li class="info">
-                                          <h4>Bruce Banner</h4>
-                                          <p>****  ****  ****  2432</p>
-                                          </li>
-                                      </ul>
-                                      <ul class="alphabet">
-                                      <li>I</li>
-                                      <li>I</li>
-                                      </ul>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="54_repicient-detail.html" class="recipient-list">
-                                      <ul class="inner">
-                                          <li class="user">
-                                              <img src="images/user/user11.jpg" alt="image">
-                                          </li>
-                                          <li class="info">
-                                              <h4>Benny</h4>
-                                              <p>****  ****  ****  2341</p>
-                                          </li>
-                                      </ul>
-                                      <ul class="alphabet">
-                                          <li>J</li>
-                                          <li>K</li>
-                                      </ul>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="54_repicient-detail.html" class="recipient-list">
-                                      <ul class="inner">
-                                          <li class="user">
-                                          <img src="images/user/user12.jpg" alt="image">
-                                          </li>
-                                          <li class="info">
-                                          <h4>Christian</h4>
-                                          <p>****  ****  ****  1255</p>
-                                          </li>
-                                      </ul>
-                                      <ul class="alphabet">
-                                      <li>L</li>
-                                      <li>M</li>
-                                      </ul>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="54_repicient-detail.html" class="recipient-list">
-                                      <ul class="inner">
-                                          <li class="user">
-                                          <img src="images/user/user13.jpg" alt="image">
-                                          </li>
-                                          <li class="info">
-                                          <h4>Cameron Williamson</h4>
-                                          <p>****  ****  ****  2352</p>
-                                          </li>
-                                      </ul>
-                                      <ul class="alphabet">
-                                          <li>O</li>
-                                          <li>P</li>
-                                      </ul>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="54_repicient-detail.html" class="recipient-list">
-                                      <ul class="inner">
-                                          <li class="user">
-                                              <img src="images/user/user14.jpg" alt="image">
-                                          </li>
-                                          <li class="info">
-                                              <h4>Cody Fisher</h4>
-                                              <p>****  ****  ****  0674</p>
-                                          </li>
-                                      </ul>
-                                      <ul class="alphabet">
-                                          <li>Q</li>
-                                          <li>R</li>
-                                      </ul>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="54_repicient-detail.html" class="recipient-list">
-                                      <ul class="inner">
-                                          <li class="user">
-                                              <img src="images/user/user2.jpg" alt="image">
-                                          </li>
-                                          <li class="info">
-                                              <h4>Andy Cody</h4>
-                                              <p>****  ****  ****  0674</p>
-                                          </li>
-                                      </ul>
-                                      <ul class="alphabet">
-                                          <li>S</li>
-                                          <li>T</li>
-                                      </ul>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="54_repicient-detail.html" class="recipient-list">
-                                      <ul class="inner">
-                                          <li class="user">
-                                              <img src="images/user/user3.jpg" alt="image">
-                                          </li>
-                                          <li class="info">
-                                              <h4>Alex Tran</h4>
-                                              <p>****  ****  ****  3216</p>
-                                          </li>
-                                      </ul>
-                                      <ul class="alphabet">
-                                          <p>U</p>
-                                          <P>V</P>
-                                      </ul>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="54_repicient-detail.html" class="recipient-list">
-                                      <ul class="inner">
-                                          <li class="user">
-                                              <img src="images/user/user8.jpg" alt="image">
-                                          </li>
-                                          <li class="info">
-                                              <h4>Themesflat</h4>
-                                              <p>****  ****  ****  0674</p>
-                                          </li>
-                                      </ul>
-                                      <ul class="alphabet">
-                                          <li>W</li>
-                                          <li>X</li>
-                                      </ul>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="54_repicient-detail.html" class="recipient-list">
-                                      <ul class="inner">
-                                      <li class="user">
-                                          <img src="images/user/user9.jpg" alt="image">
-                                      </li>
-                                      <li class="info">
-                                          <h4>Albert Flores</h4>
-                                          <p>****  ****  ****   3674</p>
-                                      </li>
-                                      </ul>
-                                      <ul class="alphabet">
-                                      <p>Y</p>
-                                      <P>Z</P>
-                                      </ul>
-                                  </a>
-                              </li>
+                              
                           </ul>
                       </div>     
                   </div>

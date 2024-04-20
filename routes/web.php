@@ -41,7 +41,7 @@ Route::middleware(['auth', 'checkRole:user'])->group(function () {
     Route::get('/cards', [App\Http\Controllers\PagesController::class, 'cardControl'])->name('cardControl');
     Route::get('/payments', [App\Http\Controllers\PagesController::class, 'payments'])->name('payments');
     Route::get('/payment-exchange', [App\Http\Controllers\PagesController::class, 'paymentExchange'])->name('paymentExchange');
-    Route::get('/payment-bill', [App\Http\Controllers\PagesController::class, 'paymentBill'])->name('paymentBill');
+    Route::get('/settings', [App\Http\Controllers\PagesController::class, 'settings'])->name('settings');
     Route::get('/payment-request', [App\Http\Controllers\PagesController::class, 'paymentRequest'])->name('paymentRequest');
     Route::get('/payment-transfer', [App\Http\Controllers\PagesController::class, 'paymentTransfer'])->name('paymentTransfer');
     Route::get('/bank-transfer', [App\Http\Controllers\PagesController::class, 'bankTransfer'])->name('bankTransfer');
@@ -54,7 +54,7 @@ Route::middleware(['auth', 'checkRole:user'])->group(function () {
     Route::get('/support', [App\Http\Controllers\PagesController::class, 'support'])->name('support');
     Route::get('/done', [App\Http\Controllers\PagesController::class, 'done'])->name('done');
     Route::get('/card-limit', [App\Http\Controllers\PagesController::class, 'cardLimit'])->name('cardLimit');
-    // Route::get('/', [App\Http\Controllers\PagesController::class, ''])->name('');
+    Route::get('/rewards', [App\Http\Controllers\PagesController::class, 'rewards'])->name('rewards');
     // Route::get('/', [App\Http\Controllers\PagesController::class, ''])->name('');
     // Route::get('/', [App\Http\Controllers\PagesController::class, ''])->name('');
 

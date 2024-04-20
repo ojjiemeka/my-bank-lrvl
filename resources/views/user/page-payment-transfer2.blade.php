@@ -16,7 +16,7 @@
                 <div class="tf-spacing-12"></div>
             </div>
 
-            <form class="tf-form mt-3" action="https://themesflat.co/html/alipay/alipay-app-pwa/25_payment-source.html">
+            <form class="tf-form mt-3" >
                 <div class="group-input">
                     <label for="">Bank</label>
                     <div class="box-custom-select">
@@ -49,10 +49,12 @@
                     </div>
     
                 </div>
-                <div class="group-input">
-                    <label for="">Account Name</label>
-                    <input type="text" value="{{Auth::user()->name}}">
-                </div>
+                @foreach ($accounts as $account)
+                    <div class="group-input">
+                        <label for="">Account Name</label>
+                        <input type="text" value="{{ $account->fname }} {{ $account->lname }}">
+                    </div>
+                @endforeach
                 <div class="group-input input-field input-money">
                     <label for="">Amout Of Money</label>
                     <input type="text" value="$ 5" required class="search-field value_input st1" type="text">
@@ -73,8 +75,8 @@
                     </div>
                 </div>
                
-                <div class="bottom-navigation-bar bottom-btn-fixed st2">
-                    <button type="submit" class="tf-btn accent large">Continue</button>
+                <div class=" bottom-btn-fixed st2">
+                    <button data-bs-toggle="modal" data-bs-target="#errorModal" class="tf-btn accent large">Continue</button>
                 </div>
 
              </form>

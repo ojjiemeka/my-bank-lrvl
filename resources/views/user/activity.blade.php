@@ -18,7 +18,8 @@
                         <a href="#" class="box-icon bg_primary"><i class="icon-arrow-up_minor primary_color"></i></a>
                             <div class="content">
                                 <p class="fw_4">Income</p>
-                                <h2 class="fw_6 success_color">$778.35</h2>
+                                <h2 class="fw_6 success_color">${{ number_format($bal, 2) }}</h2>
+                                
                             </div>
                     </div>
                     <div class="total-item">
@@ -27,182 +28,40 @@
         
                         <div class="content">
                             <p class="fw_4">Outcome</p>
-                            <h2 class="fw_6 critical_color">$878.35</h2>
+                            <h2 class="fw_6 critical_color">{{ number_format($walletBal, 2) }}</h2>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="app-section st1 mt-1 bg_white_color">
-            <div class="tf-container">
-                <div class="tf-tab">
-                    <ul class="menu-tabs timeline mb-5">
-                        <li class="nav-tab active">The last 7 days</li>
-                        <li class="nav-tab">30 days</li>
-                        <li class="nav-tab">Custom</li>
-    
-                    </ul>
-                    <div class="wrap-chart">
-                        <ul class="case">
-                            <li>400</li>
-                            <li>200</li>
-                            <li>0</li>
-                            <li>-200</li>
-                            <li>-400</li>
-                        </ul>
-                            <div class="content-tab">
-                                <div class="chart-item">
-                                    <img src="images/banner/chart.png" alt="">
-                                    <ul class="bottom d-flex justify-content-between">
-                                        <li>29-06</li>
-                                        <li>05-07</li>
-                                    </ul>  
-                                </div>
-                                <div class="chart-item">
-                                    <img src="images/banner/chart.png" alt="">
-                                    <ul class="bottom d-flex justify-content-between">
-                                        <li>29-06</li>
-                                        <li>05-07</li>
-                                    </ul>  
-                                </div>
-                                <div class="chart-item">
-                                    <img src="images/banner/chart.png" alt="">
-                                    <ul class="bottom d-flex justify-content-between">
-                                        <li>29-06</li>
-                                        <li>05-07</li>
-                                    </ul> 
-                                </div>
-                            </div>
-                    </div>   
-            </div>
-            </div>
-        </div>
+
+
         <div class="app-section st1 mt-1 mb-5 bg_white_color">
             <div class="tf-container">
+                
                 <div class="trading-month">
-                    <h4 class="fw_5 mb-3">November</h4>
                     <div class="group-trading-history mb-5">
-                        <a class="tf-trading-history" href="61_filter-research.html">
+                        @foreach ( $history as $hist )
+                        <a class="tf-trading-history" href="#">
                             <div class="inner-left">
                                 <div class="icon-box rgba_primary">
                                     <i class="icon icon-electricity-1"></i>
                                 </div>
                                 <div class="content">
-                                    <h4>Electric bill</h4>
-                                    <p>Today 10:27 AM</p>
+                                    <h4>{{$hist->desc}}</h4>
+                                    <p>{{$hist->date}}</p>
                                 </div>
                             </div>
-                            <span class="num-val critical_color">- $307</span>
+                           <div class="d-grid">
+                            <span class="num-val ">
+                                ${{$hist->amount}}
+                            </span>
+                            {{$hist->type}}
+                           </div>
+                            {{-- <spa></spa> --}}
                         </a>
-                        <a class="tf-trading-history" href="61_filter-research.html">
-                            <div class="inner-left">
-                                <div class="thumb">
-                                    <img src="images/user/user2.jpg" alt="image">
-                                </div>
-                                <div class="content">
-                                    <h4>Esther</h4>
-                                    <p>Today 7:30 AM</p>
-                                </div>
-                            </div>
-                            <span class="num-val success_color">+ $50</span>
-                        </a>
-                     
+                        @endforeach
                     </div>
-            </div>
-            <div class="trading-month">
-                    <h4 class="fw_5 mb-3">October</h4>
-                    <div class="group-trading-history mb-5">
-                        <a class="tf-trading-history" href="61_filter-research.html">
-                            <div class="inner-left">
-                                <div class="icon-box">
-                                    <i class="icon icon-mobile"></i>
-                                </div>
-                                <div class="content">
-                                    <h4>Mobile</h4>
-                                    <p>Yesterday 17:27 PM</p>
-                                </div>
-                            </div>
-                            <span class="num-val critical_color">- $25</span>
-                        </a>
-                        <a class="tf-trading-history" href="61_filter-research.html">
-                            <div class="inner-left">
-                                <div class="icon-box">
-                                    <i class="icon icon-wifi"></i>
-                                </div>
-                                <div class="content">
-                                    <h4>Wifi</h4>
-                                    <p>Yesterday 13:27 PM</p>
-                                </div>
-                            </div>
-                            <span class="num-val critical_color">- $32</span>
-                        </a>
-                        <a class="tf-trading-history" href="61_filter-research.html">
-                            <div class="inner-left">
-                                <div class="icon-box">
-                                    <i class="icon icon-water2"></i>
-                                </div>
-                                <div class="content">
-                                    <h4>Water bill</h4>
-                                    <p>Yesterday 10:27 AM</p>
-                                </div>
-                            </div>
-                           <span class="num-val critical_color">- $10</span>
-                        </a>
-                    </div>
-            </div>
-            <div class="trading-month">
-                    <h4 class="fw_5 mb-3">September</h4>
-                    <div class="group-trading-history mb-5">
-                        <a class="tf-trading-history" href="61_filter-research.html">
-                            <div class="inner-left">
-                                <div class="icon-box">
-                                    <i class="icon icon-steam"></i>
-                                </div>
-                                <div class="content">
-                                    <h4>Steam</h4>
-                                    <p>20/11/2022 17:27 PM</p>
-                                </div>
-                            </div>
-                            <span class="num-val critical_color">- $25</span>
-                        </a>
-                        <a class="tf-trading-history" href="61_filter-research.html">
-                            <div class="inner-left">
-                                <div class="icon-box">
-                                    <i class="icon icon-app-store"></i>
-                                </div>
-                                <div class="content">
-                                    <h4>App Store</h4>
-                                    <p>20/11/2022 13:27 PM</p>
-                                </div>
-                            </div>
-                           <span class="num-val critical_color">- $32</span>
-                        </a>
-                        <a class="tf-trading-history" href="61_filter-research.html">
-                            <div class="inner-left">
-                                <div class="thumb">
-                                    <img src="images/user/user5.jpg" alt="image">
-                                </div>
-                                <div class="content">
-                                    <h4>Leslie</h4>
-                                    <p>20/11/2022 10:27 AM</p>
-                                </div>
-                            </div>
-                            <span class="num-val success_color">+ $10</span>
-                        </a>
-                        <a class="tf-trading-history" href="61_filter-research.html">
-                            <div class="inner-left">
-                                <div class="thumb">
-                                    <img src="images/user/user5.jpg" alt="image">
-                                </div>
-                                <div class="content">
-                                    <h4>Leslie</h4>
-                                    <p>20/11/2022 10:27 AM</p>
-                                </div>
-                            </div>
-                            <span class="num-val success_color">+ $10</span>
-                        </a>
-                    </div>
-            </div>
             </div>
         </div>
 </div>
@@ -284,7 +143,7 @@
         </div>
         <div class="box-btn">
             <div class="tf-container">
-                <a href="61_filter-research.html" class="tf-btn accent large">Apply</a>
+                <a href="#" class="tf-btn accent large">Apply</a>
 
             </div>
         </div>

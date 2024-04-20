@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Accounts;
+use App\Models\History;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -41,7 +42,7 @@ class PagesController extends Controller
         
         // dd($data);
         $user = $data;
-        $accountData = $data->accounts[0]->toArray();
+        $accounts = $data->accounts;
         $balance = $data->accounts[0]->balance;
 
         // dd($accountData);
@@ -51,7 +52,7 @@ class PagesController extends Controller
             'navBar' => $this->navBar,
             'user' => $user,
             'balance' => $balance,
-            'accountData' => $accountData,
+            'accounts' => $accounts,
         ]);
         // return "index works";
     }
@@ -81,17 +82,21 @@ class PagesController extends Controller
 
     public function activity()
     {
-        $title = 'Activity';
+        $history = History::orderBy('date', 'desc')->get();;
+
+        // dd($history);
 
         $data = $this->getAll();
 
         $accountData = $data->accounts[0]->toArray();
 
+        $bal = $accountData['balance']['main_balance'];
+        $walletBal = $accountData['balance']['wallet_balance'];
         return view('user.activity', [
-            'menuBar' => $this->menuBar,
-            'navBar' => $this->navBar,
-            'title' => $title,
             'accountData' => $accountData,
+            'history' => $history,
+            'bal' => $bal,
+            'walletBal' => $walletBal
 
         ]);
         // return "index works";
@@ -115,19 +120,10 @@ class PagesController extends Controller
         // return "index works";
     }
 
-    public function paymentBill()
+    public function settings()
     {
-        $title = "Bills";
-        $data = $this->getAll();
-
-        $accountData = $data->accounts[0]->toArray();
-
-        return view('user.page-payment-bill', [
-            'menuBar' => $this->menuBar,
-            'navBar' => $this->navBar,
-            'title' => $title,
-            'accountData' => $accountData,
-
+        return view('user.settings', [
+            
         ]);
         // return "index works";
     }
@@ -169,18 +165,24 @@ class PagesController extends Controller
     {
         $title = "Send Money";
         $user = Auth::user();
-        $accounts = Accounts::where('email', $user->email)->with('balance')->get();
+        $data = $this->getAll();
+
+        // $accounts = Accounts::where('email', $user->email)->with('balance')->get();
+        $accounts = $data->accounts;
 
         foreach ($accounts as $account) {
             $walletBalance = $account->balance->wallet_balance;
             // Use $walletBalance as needed
         }
+
+        // dd($walletBalance);
         
         return view('user.page-payment-transfer2', [
             'menuBar' => $this->menuBar,
             'navBar' => $this->navBar,
             'title' => $title,
-            'walletBalance' => $walletBalance
+            'walletBalance' => $walletBalance,
+            'accounts' => $accounts,
         ]);
         // return "index works";
     }
@@ -218,6 +220,14 @@ class PagesController extends Controller
     {
         
         return view('user.done', [
+        ]);
+        // return "index works";
+    }
+
+    public function rewards()
+    {
+        
+        return view('user.rewards', [
         ]);
         // return "index works";
     }
@@ -265,17 +275,13 @@ class PagesController extends Controller
         $title = "Settings";
         $data = $this->getAll();
         $user = $data;
-        // $dt =$data->first()->fname;
-        $accountData = $data->accounts[0]->toArray();
-        $balance = $data->accounts[0]->balance;
+        $accounts = $data->accounts;
+
+        // dd($accounts);
 
         return view('user.page-profile', [
-            'menuBar' => $this->menuBar,
-            'navBar' => $this->navBar,
-            'title' => $title,
             'user' => $user,
-            'balance' => $balance,
-            'accountData' => $accountData,
+            'accounts' => $accounts,
         ]);
     }
 

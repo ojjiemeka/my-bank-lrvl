@@ -5,10 +5,10 @@
                     href="{{route('dashboard')}}"><i class="icon-home2"></i> Home</a> </li>
             <li><a class="fw_4 d-flex justify-content-center align-items-center flex-column" href="{{route('activity')}}"><i
                         class="icon-history"></i> History</a> </li>
-            <li><a class="fw_4 d-flex justify-content-center align-items-center flex-column" href="40_qr-code.html"><i
+            <li><a class="fw_4 d-flex justify-content-center align-items-center flex-column" data-bs-toggle="modal" data-bs-target="#errorModal"><i
                         class="icon-scan-qr-code"></i> </a> </li>
             <li><a class="fw_4 d-flex justify-content-center align-items-center flex-column"
-                    href="62_rewards.html"><svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                    href="{{route('rewards')}}"><svg width="25" height="24" viewBox="0 0 25 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <circle cx="12.25" cy="12" r="9.5" stroke="#717171" />
                         <path
@@ -16,7 +16,7 @@
                             stroke="#717171" stroke-width="1.25" />
                     </svg>
                     Rewards</a> </li>
-            <li><a class="fw_4 d-flex justify-content-center align-items-center flex-column" href="69_profile.html"><i
+            <li><a class="fw_4 d-flex justify-content-center align-items-center flex-column" href="{{route('accountProfile')}}"><i
                         class="icon-user-outline"></i> Profile</a> </li>
         </ul>
         <!-- <span class="line"></span> -->
