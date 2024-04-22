@@ -7,11 +7,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Mobile Specific Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover">
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
     <title>Deutsche Bank</title>
-    <!-- Favicon and Touch Icons  -->
-    <link rel="shortcut icon" href="images/logo.png" />
-    <link rel="apple-touch-icon-precomposed" href="images/logo.png" />
+  <meta property="og:title" content="Deutsche Bank">
+  <meta name="twitter:title" content="Deutsche Bank">
+    <meta name="twitter:card" content="summary">
+<meta name="description" property="og:description" content="Discover Deutsche Bank, one of the world’s leading financial services providers. News and Information about the bank and its products"><meta name="twitter:description" content="Discover Deutsche Bank, one of the world’s leading financial services providers. News and Information about the bank and its products">    <meta name="keywords" content="Deutsche Bank">                <link rel="apple-touch-icon" sizes="180x180" href="//master.dwebcms.db.com/application/themes/default/favicon/apple-touch-icon.png">
     <!-- Font -->
     <link rel="stylesheet" href="fonts/fonts.css" />
     <!-- Icons -->

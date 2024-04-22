@@ -1,10 +1,10 @@
 -- -------------------------------------------------------------
--- TablePlus 5.6.8(524)
+-- TablePlus 5.8.4(532)
 --
 -- https://tableplus.com/
 --
 -- Database: bank
--- Generation Time: 2024-01-02 17:50:49.6980
+-- Generation Time: 2024-04-20 19:16:30.6470
 -- -------------------------------------------------------------
 
 
@@ -31,7 +31,7 @@ CREATE TABLE `accounts` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `accounts_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `balance` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -46,7 +46,7 @@ CREATE TABLE `balance` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `failed_jobs` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -60,12 +60,22 @@ CREATE TABLE `failed_jobs` (
   UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+CREATE TABLE `history` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `desc` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `amount` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ref` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 CREATE TABLE `migrations` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `password_reset_tokens` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -128,13 +138,20 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `accounts` (`id`, `fname`, `lname`, `address`, `phonenumber`, `dob`, `acc_number`, `email`, `created_at`, `updated_at`) VALUES
-(1, 'Rowan Waters', 'Zephr Salazar', 'Quis eu voluptas qui', '+1 (606) 668-8272', '2010-12-19', '937903540467', 'carurotifu@mailinator.com', '2024-01-02 01:29:11', '2024-01-02 01:29:11');
+(1, 'Rowan Waters', 'Zephr Salazar', 'Quis eu voluptas qui', '+1 (606) 668-8272', '2010-12-19', '937903540467', 'carurotifu@mailinator.com', '2024-01-02 01:29:11', '2024-01-02 01:29:11'),
+(2, 'Simon', 'Gilham', '447 broadway, 2nd floor', '4049071271', '1969-06-10', '735645481380', 'simongilham@gmail.com', '2024-01-26 23:02:53', '2024-01-26 23:02:53'),
+(3, 'Iliana Silva', 'August Kim', 'In in fugiat dignis', '+1 (432) 666-6297', '2012-03-06', '807925768421', 'ojjiemeka@gmail.com', '2024-04-20 00:50:22', '2024-04-20 00:50:22');
 
 INSERT INTO `balance` (`id`, `acc_id`, `wallet_balance`, `main_balance`, `card_1`, `card_2`, `card_3`, `card_4`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 1, '73689866', '432232', '2345', '121212', '34567', '76543', NULL, '2024-01-02 01:29:34', '2024-01-02 01:29:34');
+(1, 1, '73689866', '432232', '2345', '121212', '34567', '76543', NULL, '2024-01-02 01:29:34', '2024-01-02 01:29:34'),
+(2, 2, '28520740', '432232', '100000', '121212', '34567', '76543', NULL, '2024-01-26 23:03:13', '2024-01-26 23:03:13'),
+(3, 3, '28520740', '432232', '2345', '121212', '34567', '76543', NULL, '2024-04-20 00:51:11', '2024-04-20 00:51:11');
+
+INSERT INTO `history` (`id`, `date`, `desc`, `type`, `amount`, `ref`) VALUES
+(1, '1984-06-11', 'Qui nemo modi anim e', 'ACH Vendor Payment', '450000', '3LEZ04939206');
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
@@ -145,7 +162,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (6, '2023_12_09_220441_accounts', 1),
 (7, '2023_12_09_225103_logins', 1),
 (8, '2023_12_09_230916_celeb', 1),
-(9, '2023_12_12_154421_rules', 1);
+(9, '2023_12_12_154421_rules', 1),
+(12, '2024_04_19_231110_history', 2);
 
 INSERT INTO `rules` (`id`, `name`, `desc`, `created_at`, `updated_at`) VALUES
 (1, 'Rule 1', 'All Access Restricted', NULL, NULL),
@@ -153,7 +171,9 @@ INSERT INTO `rules` (`id`, `name`, `desc`, `created_at`, `updated_at`) VALUES
 
 INSERT INTO `users` (`id`, `name`, `email`, `acc_userid`, `is_admin`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'admin', 'admin@admin.com', NULL, 1, NULL, '$2y$12$iwv3r1HnysRMQMAFQW4DiuVyEiD7IkUABPze3ZrCSeqDVjweeevda', NULL, NULL, NULL),
-(2, 'user', 'carurotifu@mailinator.com', 'qeqiheraka', 0, NULL, '$2y$12$nEqvjbZFODg3MVJEE59okulNLSMWpOkXclrkVNoww4BtRdzbZjvs2', NULL, '2024-01-02 01:29:11', '2024-01-02 01:29:11');
+(2, 'user', 'carurotifu@mailinator.com', '1', 0, NULL, '$2y$12$nEqvjbZFODg3MVJEE59okulNLSMWpOkXclrkVNoww4BtRdzbZjvs2', NULL, '2024-01-02 01:29:11', '2024-01-02 01:29:11'),
+(3, 'user', 'simongilham@gmail.com', '2', 0, NULL, '$2y$12$xn0qd90tNVhQDgzoLGs29eaLgwCdK9HTqLpluwlKVzP0ZAZDzhsTS', NULL, '2024-01-26 23:02:53', '2024-01-26 23:02:53'),
+(4, 'user', 'ojjiemeka@gmail.com', NULL, 0, NULL, '$2y$12$aVHk98zQ72sBJLifJ6jM8eNfeh5cWMyeT.3m9mEMAEAuI2QSNJ3v.', NULL, '2024-04-20 00:50:22', '2024-04-20 00:50:22');
 
 
 
